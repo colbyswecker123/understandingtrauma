@@ -180,3 +180,54 @@ textarea:focus,input:focus{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255
 .empty-state{display:grid;gap:4px;padding:18px;border:2px dashed #000;border-radius:16px;background:rgba(255,255,255,.35);text-align:center}
 .empty-state strong{font-size:1.05rem}
 .empty-state span{font-weight:650;color:#222}
+
+/* v5 expanded site structure */
+.expanded-shell,.page-shell{overflow:hidden}
+.site-topbar{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;min-height:90px;padding:14px 20px;border-bottom:4px solid #050505;box-shadow:0 9px 16px rgba(0,0,0,.18)}
+.top-logo{display:grid;place-items:center;width:72px;height:72px}
+.top-logo img{width:72px;height:72px;object-fit:contain;filter:drop-shadow(0 7px 7px rgba(0,0,0,.35)) drop-shadow(0 0 13px rgba(255,255,255,.34))}
+.menu-toggle,.menu-close{display:grid;place-items:center;border:2px solid #050505;background:linear-gradient(180deg,#eeeeee,#d6d6d6);color:#000;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.16)}
+.menu-toggle{width:50px;height:46px;border-radius:14px;gap:4px}
+.menu-toggle span{display:block;width:22px;height:3px;border-radius:99px;background:#050505}
+.menu-close{width:40px;height:40px;border-radius:12px;font-size:1.5rem;font-weight:900;line-height:1}
+.site-menu{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.45);display:none;align-items:flex-start;justify-content:center;padding:18px}
+.site-menu.is-open{display:flex}
+.menu-card{width:min(100%,380px);margin-top:12px;border:2px solid #000;border-radius:22px;background:linear-gradient(180deg,#eeeeee,#cacaca);box-shadow:0 24px 70px rgba(0,0,0,.35);overflow:hidden}
+.menu-head{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:2px solid #000}
+.menu-head span{font-size:.78rem;text-transform:uppercase;letter-spacing:.2em;font-weight:900}
+.menu-card a{display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:0 18px;border-bottom:1px solid rgba(0,0,0,.25);font-weight:900}
+.menu-card a::after{content:"→";font-weight:900}
+.menu-card a:last-child{border-bottom:0}
+.menu-card a.is-active{background:rgba(255,255,255,.42)}
+.menu-open{overflow:hidden}
+.expanded-main{gap:16px}
+.feature-stack{width:min(100%,338px);display:grid;gap:10px;margin:0 auto}
+.feature-card{display:grid;gap:4px;padding:13px 14px;border:1px solid rgba(0,0,0,.55);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.20),rgba(0,0,0,.055));box-shadow:inset 0 1px 0 rgba(255,255,255,.30)}
+.feature-title{font-weight:900}
+.feature-copy{font-size:.82rem;font-weight:650;line-height:1.28;color:#1e1e1e}
+.compact-music{grid-template-columns:auto minmax(0,1fr)}
+.expanded-footer{position:relative;z-index:2;display:block;padding:16px;border-top:4px solid #050505;background:linear-gradient(180deg,rgba(150,150,150,.62),rgba(125,125,125,.62))}
+.footer-main{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.footer-socials{display:flex;align-items:center;gap:8px}
+.footer-socials a{display:grid;place-items:center;width:40px;height:40px;border:2px solid #000;border-radius:12px;background:linear-gradient(180deg,#ededed,#d5d5d5);box-shadow:0 3px 0 rgba(0,0,0,.16)}
+.footer-socials svg{width:21px;height:21px}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.28)}
+.footer-links a{font-size:.82rem;font-weight:900;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.content-main{display:grid;gap:14px}
+.content-hero{text-align:center;max-width:720px;margin:0 auto}
+.content-card{border:2px solid #000;border-radius:18px;background:linear-gradient(180deg,rgba(236,236,236,.92),rgba(210,210,210,.92));box-shadow:var(--shadow-tight);padding:18px}
+.content-card h2{font-size:1.2rem;margin:0 0 8px;font-weight:900}
+.content-card p{margin:0;font-weight:600;line-height:1.45}
+.content-grid{display:grid;gap:12px}
+.important-card{background:linear-gradient(180deg,#f2f2f2,#d2d2d2)}
+@media (min-width:760px){
+.site-topbar{padding-inline:28px}
+.content-grid{grid-template-columns:repeat(3,1fr)}
+.phone-shell.expanded-shell{width:min(100%,520px)}
+}
+@media (max-width:390px){
+.site-topbar{min-height:82px;padding:10px 16px}
+.top-logo,.top-logo img{width:64px;height:64px}
+.menu-toggle{width:48px;height:44px}
+.footer-main{align-items:flex-start;flex-direction:column}
+}

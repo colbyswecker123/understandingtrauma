@@ -138,3 +138,8 @@ This version includes a standard admin username/password login that works with i
 ## Admin portal split
 
 The admin area now has `/admin/` as a private portal/dashboard and `/admin/messages/` as the protected pending-message review page.
+
+
+## Expanded navigation and notifications
+
+This version adds a left-logo/right-hamburger header, footer social links on all public pages, new About and Resources pages, and optional email notifications for every submitted message. See `NOTIFICATION_SETUP.md`.
