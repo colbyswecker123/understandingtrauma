@@ -4,100 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Understanding Trauma | A Note For You</title>
-<meta name="description" content="Gentle handwritten-style notes for healing, hope, and the hard days when you need a reminder that you are not alone.">
+<meta name="description" content="A gentle, mobile-first space for encouragement, hope, and healing.">
 <meta property="og:title" content="Understanding Trauma | A Note For You">
-<meta property="og:description" content="A softer place to pause, breathe, and receive a gentle reminder.">
+<meta property="og:description" content="A gentle place to pause, breathe, and receive a note of encouragement.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#6d8375">
+<meta name="theme-color" content="#8b8b8b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-<body>
+<body class="home-body">
 <a class="skip-link" href="#main">Skip to main content</a>
-<div class="site-shell">
-<header class="site-header" aria-label="Site header">
-<a class="brand" href="/" aria-label="Understanding Trauma home">
-<span class="brand-mark" aria-hidden="true">UT</span>
-<span class="brand-text"><strong>Understanding</strong><span>Trauma</span></span>
+<div class="home-frame">
+<header class="site-header site-header-home" aria-label="Site header">
+<a class="brand brand-home" href="/" aria-label="Understanding Trauma home">
+<img class="brand-logo" src="/assets/images/ut-logo.jpg" alt="Understanding Trauma logo">
 </a>
-<nav class="main-nav" aria-label="Main navigation">
-<a href="/">A Note For You</a>
-<a href="/user_messages/">Submit a Message</a>
-<a href="#social">Social</a>
-</nav>
 </header>
-<main id="main">
-<section class="hero section-pad">
-<div class="hero-copy reveal">
-<p class="eyebrow">A softer place to land</p>
-<h1>A note for the day you need a little more hope.</h1>
-<p class="hero-lede">Take a breath. Read one gentle reminder. Come back whenever the day feels heavy.</p>
-<div class="hero-actions">
-<button class="button button-primary" id="newNoteButton" type="button">Show me another note</button>
-<a class="button button-secondary" href="/user_messages/">Submit a custom message</a>
+<main class="main-home" id="main">
+<section class="note-zone reveal" aria-label="A note for you">
+<p class="eyebrow eyebrow-home">A Note For You</p>
+<p class="home-intro">A quiet reminder for the moments when you need gentleness, truth, and hope.</p>
+<div class="note-paper" aria-live="polite">
+<p class="note-kicker">Just in case nobody told you today:</p>
+<p class="note-message" id="noteMessage">You are not alone in what you’re feeling.</p>
+<p class="note-helper">Tap below for another message.</p>
+</div>
+<div class="home-actions">
+<button class="button button-secondary" id="newNoteButton" type="button">Show Another Message</button>
+<a class="button button-primary" href="/user_messages/">Submit a Custom Message</a>
+<p class="review-note">All custom messages are reviewed before they are published to the home page.</p>
+</div>
+<div class="social-links" id="social" aria-label="Social links">
+<a href="https://www.tiktok.com/@understandingtrauma?is_from_webapp=1&amp;sender_device=pc" rel="noopener" target="_blank" aria-label="TikTok" title="TikTok">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.27V2h-3.12v13.58a2.8 2.8 0 1 1-2.8-2.8c.31 0 .61.05.89.14V9.75a5.94 5.94 0 0 0-.89-.07A5.92 5.92 0 1 0 15.82 15V8.13a7.9 7.9 0 0 0 4.65 1.52V6.69h-.88Z" fill="currentColor"/></svg>
+</a>
+<a href="https://www.instagram.com/under_standingtrauma/" rel="noopener" target="_blank" aria-label="Instagram" title="Instagram">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="currentColor"/></svg>
+</a>
+<a href="https://www.facebook.com/profile.php?id=61576005540842" rel="noopener" target="_blank" aria-label="Facebook" title="Facebook">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.67l.4-3h-3.07V9.09c0-.87.25-1.46 1.49-1.46H16.7V4.95c-.3-.04-1.33-.13-2.53-.13-2.5 0-4.22 1.53-4.22 4.34V11H7.1v3h2.85v8h3.55Z" fill="currentColor"/></svg>
+</a>
 </div>
 <div class="music-card" data-audio-card>
 <button class="music-toggle" id="musicButton" type="button" aria-pressed="false">
 <span class="music-icon" aria-hidden="true">♪</span>
-<span>Press for relaxing music</span>
+<span>Press for Relaxing Music</span>
 </button>
 <audio id="siteAudio" preload="none" loop src="/assets/audio/relaxing-music.mp3"></audio>
 </div>
-</div>
-<div class="note-wrap reveal reveal-delay">
-<div class="note-paper" aria-live="polite">
-<div class="note-pin" aria-hidden="true"></div>
-<p class="note-kicker">Just in case nobody told you today:</p>
-<p class="note-message" id="noteMessage">You are not alone in what you’re feeling.</p>
-<p class="note-helper">Refresh is no longer needed. Use the button for another note.</p>
-</div>
-<div class="floating-card card-one" aria-hidden="true">Breathe in grace.</div>
-<div class="floating-card card-two" aria-hidden="true">You matter here.</div>
-</div>
-</section>
-<section class="support-strip reveal" aria-label="Support reminder">
-<div>
-<h2>This space is gentle, not clinical.</h2>
-<p>Understanding Trauma shares encouragement and hope. It is not a substitute for therapy, medical care, or emergency help.</p>
-</div>
-<a class="text-link" href="/user_messages/">Share a message of encouragement</a>
-</section>
-<section class="section-pad content-grid">
-<article class="info-card reveal">
-<span class="info-icon" aria-hidden="true">01</span>
-<h2>Read a note</h2>
-<p>Small, calming reminders are shown one at a time so the page feels quiet instead of overwhelming.</p>
-</article>
-<article class="info-card reveal">
-<span class="info-icon" aria-hidden="true">02</span>
-<h2>Pause for a moment</h2>
-<p>The design uses soft colors, open space, and gentle movement to create a warmer experience on phones and desktops.</p>
-</article>
-<article class="info-card reveal">
-<span class="info-icon" aria-hidden="true">03</span>
-<h2>Send hope forward</h2>
-<p>Visitors can submit custom notes, and every message can be reviewed before it appears publicly.</p>
-</article>
-</section>
-<section class="quote-band reveal">
-<div class="quote-card">
-<p>“Healing does not have to happen all at once. Sometimes it starts with one safe breath.”</p>
-</div>
 </section>
 </main>
-<footer class="site-footer" id="social">
-<div>
-<p class="footer-brand">Understanding Trauma</p>
-<p class="footer-note">Gentle handwritten-style notes for healing, hope, and faith.</p>
-</div>
-<div class="social-links" aria-label="Social links">
-<a href="https://www.tiktok.com/@understandingtrauma" rel="noopener" target="_blank">TikTok</a>
-<a href="https://www.instagram.com/under_standingtrauma/" rel="noopener" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/profile.php?id=61576005540842" rel="noopener" target="_blank">Facebook</a>
-</div>
-</footer>
 </div>
 <script src="/assets/js/app.js" defer></script>
 </body>
