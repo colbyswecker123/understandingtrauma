@@ -1237,3 +1237,41 @@ linear-gradient(180deg,rgba(232,232,226,.98),rgba(210,210,204,.90))!important;
 left:56px!important;
 }
 }
+/* store coming soon card */
+.store-coming-soon-card{
+text-align:center!important;
+align-items:center!important;
+gap:12px!important;
+padding:28px 18px!important;
+}
+.store-coming-soon-mark{
+display:inline-grid!important;
+place-items:center!important;
+width:72px!important;
+height:72px!important;
+border-radius:999px!important;
+margin:0 auto 2px!important;
+border:1.75px solid rgba(0,0,0,.68)!important;
+background:linear-gradient(180deg,rgba(255,255,255,.74),rgba(220,220,220,.56))!important;
+box-shadow:0 1px 0 rgba(255,255,255,.74) inset,0 8px 20px rgba(0,0,0,.10)!important;
+font-weight:950!important;
+letter-spacing:-.04em!important;
+text-transform:uppercase!important;
+font-size:.82rem!important;
+}
+.store-coming-soon-card h2{
+margin:0!important;
+font-size:clamp(1.55rem,6vw,2.35rem)!important;
+letter-spacing:-.06em!important;
+}
+.store-coming-soon-card p{
+max-width:440px!important;
+margin:0 auto!important;
+font-weight:650!important;
+line-height:1.42!important;
+color:rgba(0,0,0,.72)!important;
+}
+.store-coming-soon-card .control-button{
+width:min(100%,280px)!important;
+margin-top:4px!important;
+}
