@@ -1502,3 +1502,84 @@ font-size:clamp(2rem,12vw,3rem)!important;
 font-size:.94rem!important;
 }
 }
+/* v31 dynamic footer legal + music aligned with socials */
+.footer-main{
+display:grid!important;
+grid-template-columns:1fr auto auto!important;
+align-items:center!important;
+gap:12px!important;
+}
+.footer-brand-block{
+min-width:0!important;
+}
+.footer-socials{
+justify-self:end!important;
+display:flex!important;
+gap:8px!important;
+}
+.footer-socials a{
+display:grid!important;
+place-items:center!important;
+width:38px!important;
+height:38px!important;
+border:2px solid rgba(0,0,0,.70)!important;
+border-radius:12px!important;
+background:linear-gradient(180deg,rgba(255,255,255,.78),rgba(223,223,223,.64))!important;
+box-shadow:0 1px 0 rgba(255,255,255,.74) inset,0 2px 0 rgba(0,0,0,.15),0 8px 18px rgba(0,0,0,.08)!important;
+color:#050505!important;
+}
+.footer-socials svg{
+width:20px!important;
+height:20px!important;
+}
+.footer-music-row{
+display:none!important;
+}
+.footer-music-inline{
+width:auto!important;
+min-width:auto!important;
+max-width:none!important;
+height:38px!important;
+min-height:38px!important;
+padding:0 13px!important;
+justify-self:end!important;
+white-space:nowrap!important;
+}
+.footer-music-inline .footer-music-label{
+font-size:.82rem!important;
+}
+.footer-music-inline .footer-music-icon{
+width:20px!important;
+height:20px!important;
+font-size:.72rem!important;
+}
+.footer-legal{
+margin:6px 0 0!important;
+font-size:.76rem!important;
+font-weight:800!important;
+line-height:1.25!important;
+color:rgba(0,0,0,.78)!important;
+}
+.footer-disclaimer{
+max-width:560px!important;
+margin:4px 0 0!important;
+font-size:.72rem!important;
+font-weight:650!important;
+line-height:1.28!important;
+color:rgba(0,0,0,.66)!important;
+}
+@media (max-width:560px){
+.footer-main{
+grid-template-columns:1fr auto!important;
+gap:10px 12px!important;
+}
+.footer-brand-block{
+grid-column:1 / -1!important;
+}
+.footer-socials{
+justify-self:start!important;
+}
+.footer-music-inline{
+justify-self:end!important;
+}
+}
