@@ -163,6 +163,7 @@ const fallbackMessages=[
 "You are allowed to lay down what is too heavy.",
 "You are allowed to exist without performing strength."
 ];
+
 (function(){
 let lastMessage="";
 let writingTimer=null;
@@ -178,18 +179,28 @@ lastMessage=msg;
 return msg;
 }
 
-function typeText(el,text,speed=34){
+function writeLikePencil(el,text,speed=28){
 clearInterval(writingTimer);
 el.textContent="";
-el.classList.remove("is-waiting");
 el.classList.add("is-writing");
+
+const textNode=document.createTextNode("");
+const pencil=document.createElement("span");
+pencil.className="pencil-cursor";
+pencil.setAttribute("aria-hidden","true");
+
+el.appendChild(textNode);
+el.appendChild(pencil);
+
 let index=0;
 writingTimer=setInterval(()=>{
-el.textContent+=text.charAt(index);
+textNode.nodeValue+=text.charAt(index);
 index++;
+
 if(index>=text.length){
 clearInterval(writingTimer);
 writingTimer=null;
+pencil.remove();
 el.classList.remove("is-writing");
 }
 },speed);
@@ -209,21 +220,22 @@ return localNote();
 async function loadNote(){
 const noteEl=document.getElementById("noteMessage");
 if(!noteEl)return;
-noteEl.textContent="Writing your note...";
-noteEl.classList.add("is-waiting");
+noteEl.textContent="";
 const message=await getNote();
 lastMessage=message;
-typeText(noteEl,message,34);
+writeLikePencil(noteEl,message,28);
 }
 
 function runHomeNote(){
 const noteEl=document.getElementById("noteMessage");
 const newNoteButton=document.getElementById("newNoteButton");
 if(!noteEl)return;
+
 if(newNoteButton&&newNoteButton.dataset.utHomeBound!=="true"){
 newNoteButton.dataset.utHomeBound="true";
 newNoteButton.addEventListener("click",loadNote);
 }
+
 if(noteEl.dataset.utLoaded!=="true"){
 noteEl.dataset.utLoaded="true";
 loadNote();
