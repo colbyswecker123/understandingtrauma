@@ -12,15 +12,23 @@ function renderProducts(grid,products){
 if(!grid)return;
 grid.innerHTML="";
 if(!products.length){
-grid.innerHTML=`<article class="content-card store-empty store-coming-soon-card">
-<div class="store-coming-soon-mark">Soon</div>
-<h2>Merchandise coming soon.</h2>
-<p>There are no active products yet. Once items are added in the admin portal and marked active, they will automatically show here.</p>
-<a class="control-button secondary-control" href="/support/">
+grid.innerHTML=`<section class="store-coming-soon-page">
+<div class="store-coming-soon-card-clean">
+<p class="store-eyebrow">Understanding Trauma Store</p>
+<h2>Store coming soon.</h2>
+<p class="store-coming-copy">We’re preparing meaningful items connected to encouragement, healing, faith, and daily reminders. Products will appear here once they are added and marked active.</p>
+<div class="store-coming-actions">
+<a class="control-button primary-control" href="/support/">
 <span class="control-icon" aria-hidden="true">☕</span>
 <span>Support the mission</span>
 </a>
-</article>`;
+<a class="control-button secondary-control" href="/user_messages/">
+<span class="control-icon" aria-hidden="true">✎</span>
+<span>Submit a message</span>
+</a>
+</div>
+</div>
+</section>`;
 return;
 }
 products.forEach((product)=>{
