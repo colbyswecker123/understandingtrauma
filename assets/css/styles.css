@@ -1349,3 +1349,60 @@ transform:translateY(-.02em) rotate(-12deg);
 display:none!important;
 }
 }
+/* consistent quote/message sizing */
+.note-message,
+.faith-message{
+font-size:clamp(1.65rem,7vw,2.65rem)!important;
+line-height:1.02!important;
+letter-spacing:-.045em!important;
+font-weight:700!important;
+text-wrap:balance!important;
+}
+
+@media (max-width:420px){
+.note-message,
+.faith-message{
+font-size:clamp(1.48rem,7.4vw,2.15rem)!important;
+line-height:1.05!important;
+}
+}
+
+/* v28 final cleanup: full-width shell, fixed header, notepad, pencil cursor, message sizing */
+:root{--ut-header-height:74px;--ut-page-max:920px}
+html,body{margin:0!important;padding:0!important;width:100%!important;min-height:100%!important;overflow-x:hidden!important}
+body{padding-top:var(--ut-header-height)!important;background:#8e8e8e!important}
+.app-shell,.balanced-app-shell,.minimal-app-shell,.calm-app-shell{width:100%!important;max-width:none!important;min-height:100svh!important;margin:0!important;padding:0!important;border-radius:0!important;overflow:visible!important;box-shadow:none!important}
+.site-topbar,.clean-sticky-header,.fixed-glass-header{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;max-width:none!important;min-height:var(--ut-header-height)!important;margin:0!important;padding:10px 18px!important;transform:none!important;z-index:9999!important;border-radius:0!important;border-left:0!important;border-right:0!important;border-top:0!important;border-bottom:1px solid rgba(0,0,0,.38)!important;background:linear-gradient(180deg,rgba(246,246,246,.78),rgba(180,180,180,.50))!important;-webkit-backdrop-filter:blur(18px) saturate(1.18)!important;backdrop-filter:blur(18px) saturate(1.18)!important;box-shadow:0 1px 0 rgba(255,255,255,.58) inset,0 9px 22px rgba(0,0,0,.12)!important}
+.main-home,.interior-main{width:100%!important;max-width:var(--ut-page-max)!important;margin:0 auto!important;padding-top:24px!important;padding-left:16px!important;padding-right:16px!important;box-sizing:border-box!important}
+.site-footer,.clean-footer,.minimal-footer{width:100%!important;max-width:none!important;margin:0!important;border-radius:0!important;box-sizing:border-box!important}
+.footer-main,.footer-links,.footer-music-row{width:min(100%,var(--ut-page-max))!important;margin-left:auto!important;margin-right:auto!important;box-sizing:border-box!important}
+.footer-music-row{display:flex!important;justify-content:center!important;padding:10px 16px 4px!important}
+.footer-music-button{appearance:none!important;border:1.5px solid rgba(0,0,0,.68)!important;border-radius:999px!important;background:linear-gradient(180deg,rgba(255,255,255,.76),rgba(222,222,222,.62))!important;box-shadow:0 1px 0 rgba(255,255,255,.72) inset,0 2px 0 rgba(0,0,0,.13),0 8px 18px rgba(0,0,0,.08)!important;color:#0d0d0d!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;min-height:42px!important;padding:0 16px!important;font:inherit!important;font-size:.84rem!important;font-weight:900!important;letter-spacing:-.01em!important;cursor:pointer!important;user-select:none!important;-webkit-tap-highlight-color:transparent!important}
+.footer-music-icon{width:22px!important;height:22px!important;border-radius:999px!important;display:inline-grid!important;place-items:center!important;background:rgba(0,0,0,.88)!important;color:#fff!important;font-size:.78rem!important;line-height:1!important}
+.footer-music-button[aria-pressed="true"]{background:linear-gradient(180deg,rgba(24,24,24,.92),rgba(0,0,0,.84))!important;color:#fff!important}
+.footer-music-button[aria-pressed="true"] .footer-music-icon{background:#fff!important;color:#111!important;box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.82)!important}
+.footer-music-button[aria-pressed="true"] .footer-music-label::after{content:" • looping";font-weight:800;opacity:.72}
+.note-paper,.balanced-note-paper,.faith-note-paper{position:relative!important;overflow:hidden!important;isolation:isolate!important;width:min(340px,92vw)!important;min-height:224px!important;border-radius:24px!important;border:1.75px solid rgba(0,0,0,.52)!important;clip-path:none!important;background:linear-gradient(90deg,rgba(0,0,0,.10) 0 1px,transparent 1px 100%) 54px 0/1px 100% no-repeat,repeating-linear-gradient(180deg,transparent 0 35px,rgba(0,0,0,.06) 36px,transparent 37px),linear-gradient(180deg,#fbfbf8 0%,#f1f0eb 58%,#e9e7df 100%)!important;box-shadow:0 2px 0 rgba(255,255,255,.70) inset,0 18px 42px rgba(0,0,0,.16),0 2px 0 rgba(0,0,0,.10)!important;padding:40px 22px 34px 70px!important}
+.note-paper::before,.balanced-note-paper::before,.faith-note-paper::before{content:""!important;position:absolute!important;top:0!important;bottom:0!important;left:0!important;width:48px!important;inset:auto auto auto 0!important;border-right:1px solid rgba(0,0,0,.16)!important;background:radial-gradient(circle at 24px 34px,rgba(0,0,0,.24) 0 4px,rgba(255,255,255,.58) 4.5px 7.5px,transparent 8px),radial-gradient(circle at 24px 84px,rgba(0,0,0,.22) 0 4px,rgba(255,255,255,.56) 4.5px 7.5px,transparent 8px),radial-gradient(circle at 24px 134px,rgba(0,0,0,.20) 0 4px,rgba(255,255,255,.54) 4.5px 7.5px,transparent 8px),linear-gradient(180deg,rgba(232,232,226,.98),rgba(210,210,204,.90))!important;border-radius:24px 0 0 24px!important;z-index:-1!important;pointer-events:none!important;box-shadow:1px 0 0 rgba(255,255,255,.50) inset!important}
+.note-paper::after,.balanced-note-paper::after,.faith-note-paper::after{content:""!important;position:absolute!important;left:68px!important;right:18px!important;top:12px!important;height:18px!important;border-radius:999px!important;background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent)!important;opacity:.72!important;pointer-events:none!important}
+.note-message,.faith-message{position:relative!important;z-index:1!important;min-height:2.6em!important;max-width:252px!important;margin-left:auto!important;margin-right:auto!important;font-family:var(--font-note)!important;font-size:clamp(1.65rem,7vw,2.65rem)!important;line-height:1.02!important;letter-spacing:-.045em!important;font-weight:700!important;text-wrap:balance!important;transition:opacity .18s ease,transform .18s ease!important}
+.note-kicker,.note-helper,.faith-reference,.faith-inline-verse{position:relative!important;z-index:1!important}
+.faith-message{max-width:270px!important}
+.faith-reference{margin:8px 0 0!important;font-size:.78rem!important;font-weight:900!important;letter-spacing:.08em!important;text-transform:uppercase!important;color:rgba(0,0,0,.64)!important}
+.faith-scripture-box,.faith-scripture-label{display:none!important}
+.faith-inline-verse{width:100%!important;margin:12px auto 2px!important;padding:10px 12px 0!important;border-top:1px solid rgba(0,0,0,.16)!important}
+.faith-inline-verse .faith-verse-text,.faith-verse-text{margin:0!important;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:.88rem!important;font-weight:750!important;line-height:1.28!important;letter-spacing:-.02em!important;color:rgba(0,0,0,.76)!important}
+.faith-inline-verse .faith-verse-reference,.faith-verse-reference{margin:6px 0 0!important;font-size:.64rem!important;font-weight:950!important;letter-spacing:.11em!important;text-transform:uppercase!important;color:rgba(0,0,0,.55)!important}
+.note-message.is-writing::after,.faith-message.is-writing::after{content:none!important;display:none!important}
+.pencil-cursor{display:inline-block!important;width:1.05em!important;height:1.05em!important;margin-left:.12em!important;vertical-align:-.08em!important;position:relative!important;transform:rotate(-18deg)!important;animation:pencilWriteDrag .42s ease-in-out infinite alternate!important}
+.pencil-cursor::before{content:""!important;position:absolute!important;left:.22em!important;top:.42em!important;width:.70em!important;height:.16em!important;border-radius:999px!important;background:#1d1d1d!important;box-shadow:0 0 0 1px rgba(0,0,0,.15)!important}
+.pencil-cursor::after{content:""!important;position:absolute!important;left:.86em!important;top:.36em!important;width:0!important;height:0!important;border-left:.22em solid #1d1d1d!important;border-top:.13em solid transparent!important;border-bottom:.13em solid transparent!important}
+.note-message.is-writing,.faith-message.is-writing{text-shadow:.25px .25px 0 rgba(0,0,0,.18)!important}
+@keyframes pencilWriteDrag{from{transform:translateY(.04em) rotate(-22deg)}to{transform:translateY(-.02em) rotate(-12deg)}}
+.store-coming-soon-card{text-align:center!important;align-items:center!important;gap:12px!important;padding:28px 18px!important}
+.store-coming-soon-mark{display:inline-grid!important;place-items:center!important;width:72px!important;height:72px!important;border-radius:999px!important;margin:0 auto 2px!important;border:1.75px solid rgba(0,0,0,.68)!important;background:linear-gradient(180deg,rgba(255,255,255,.74),rgba(220,220,220,.56))!important;box-shadow:0 1px 0 rgba(255,255,255,.74) inset,0 8px 20px rgba(0,0,0,.10)!important;font-weight:950!important;letter-spacing:-.04em!important;text-transform:uppercase!important;font-size:.82rem!important}
+.store-coming-soon-card h2{margin:0!important;font-size:clamp(1.55rem,6vw,2.35rem)!important;letter-spacing:-.06em!important}
+.store-coming-soon-card p{max-width:440px!important;margin:0 auto!important;font-weight:650!important;line-height:1.42!important;color:rgba(0,0,0,.72)!important}
+.store-coming-soon-card .control-button{width:min(100%,280px)!important;margin-top:4px!important}
+@media (max-width:420px){:root{--ut-header-height:68px}.site-topbar,.clean-sticky-header,.fixed-glass-header{min-height:var(--ut-header-height)!important;padding:8px 16px!important}.main-home,.interior-main{padding-top:20px!important;padding-left:14px!important;padding-right:14px!important}.note-paper,.balanced-note-paper,.faith-note-paper{width:min(330px,92vw)!important;min-height:214px!important;padding:36px 18px 30px 56px!important;border-radius:22px!important;background:linear-gradient(90deg,rgba(0,0,0,.10) 0 1px,transparent 1px 100%) 43px 0/1px 100% no-repeat,repeating-linear-gradient(180deg,transparent 0 32px,rgba(0,0,0,.058) 33px,transparent 34px),linear-gradient(180deg,#fbfbf8 0%,#f1f0eb 58%,#e9e7df 100%)!important}.note-paper::before,.balanced-note-paper::before,.faith-note-paper::before{width:40px!important;background:radial-gradient(circle at 20px 32px,rgba(0,0,0,.23) 0 3.5px,rgba(255,255,255,.58) 4px 7px,transparent 7.5px),radial-gradient(circle at 20px 82px,rgba(0,0,0,.21) 0 3.5px,rgba(255,255,255,.56) 4px 7px,transparent 7.5px),radial-gradient(circle at 20px 132px,rgba(0,0,0,.19) 0 3.5px,rgba(255,255,255,.54) 4px 7px,transparent 7.5px),linear-gradient(180deg,rgba(232,232,226,.98),rgba(210,210,204,.90))!important}.note-paper::after,.balanced-note-paper::after,.faith-note-paper::after{left:56px!important}.note-message,.faith-message{font-size:clamp(1.48rem,7.4vw,2.15rem)!important;line-height:1.05!important}.faith-inline-verse .faith-verse-text,.faith-verse-text{font-size:.84rem!important;line-height:1.24!important}.faith-inline-verse .faith-verse-reference,.faith-verse-reference{font-size:.62rem!important}.footer-music-button{width:100%!important;max-width:320px!important}}
+@media (prefers-reduced-motion:reduce){.pencil-cursor{display:none!important}}
