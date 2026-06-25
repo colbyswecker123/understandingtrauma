@@ -143,3 +143,8 @@ The admin area now has `/admin/` as a private portal/dashboard and `/admin/messa
 ## Expanded navigation and notifications
 
 This version adds a left-logo/right-hamburger header, footer social links on all public pages, new About and Resources pages, and optional email notifications for every submitted message. See `NOTIFICATION_SETUP.md`.
+
+
+## Professional clean pass
+
+This version reduces the heavy visual styling, tightens mobile spacing, adds a more professional top navigation/header, keeps footer socials, and uses cleaner card/button sizing across home, submit, about, resources, and admin pages.

@@ -14,6 +14,4 @@ siteMenu.addEventListener("click",(event)=>{
 if(event.target===siteMenu||event.target.closest("a"))setMenu(false);
 });
 }
-document.addEventListener("keydown",(event)=>{
-if(event.key==="Escape")setMenu(false);
-});
+document.addEventListener("keydown",(event)=>{if(event.key==="Escape")setMenu(false);});
