@@ -1147,3 +1147,93 @@ padding:12px 13px;
 font-size:.98rem;
 }
 }
+/* refined notepad quote cards */
+.note-paper,
+.balanced-note-paper,
+.faith-note-paper{
+position:relative!important;
+overflow:hidden!important;
+isolation:isolate!important;
+border-radius:24px!important;
+border:1.75px solid rgba(0,0,0,.52)!important;
+background:
+linear-gradient(90deg,rgba(0,0,0,.10) 0 1px,transparent 1px 100%) 54px 0/1px 100% no-repeat,
+repeating-linear-gradient(180deg,transparent 0 35px,rgba(0,0,0,.06) 36px,transparent 37px),
+linear-gradient(180deg,#fbfbf8 0%,#f1f0eb 58%,#e9e7df 100%)!important;
+box-shadow:
+0 2px 0 rgba(255,255,255,.70) inset,
+0 18px 42px rgba(0,0,0,.16),
+0 2px 0 rgba(0,0,0,.10)!important;
+padding-left:70px!important;
+}
+.note-paper::before,
+.balanced-note-paper::before,
+.faith-note-paper::before{
+content:""!important;
+position:absolute!important;
+top:0!important;
+bottom:0!important;
+left:0!important;
+width:48px!important;
+border-right:1px solid rgba(0,0,0,.16)!important;
+background:
+radial-gradient(circle at 24px 34px,rgba(0,0,0,.24) 0 4px,rgba(255,255,255,.58) 4.5px 7.5px,transparent 8px),
+radial-gradient(circle at 24px 84px,rgba(0,0,0,.22) 0 4px,rgba(255,255,255,.56) 4.5px 7.5px,transparent 8px),
+radial-gradient(circle at 24px 134px,rgba(0,0,0,.20) 0 4px,rgba(255,255,255,.54) 4.5px 7.5px,transparent 8px),
+linear-gradient(180deg,rgba(232,232,226,.98),rgba(210,210,204,.90))!important;
+border-radius:24px 0 0 24px!important;
+z-index:-1!important;
+pointer-events:none!important;
+}
+.note-paper::after,
+.balanced-note-paper::after,
+.faith-note-paper::after{
+content:""!important;
+position:absolute!important;
+left:68px!important;
+right:18px!important;
+top:12px!important;
+height:18px!important;
+border-radius:999px!important;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent)!important;
+opacity:.72!important;
+pointer-events:none!important;
+}
+.note-message,
+.faith-message{
+position:relative!important;
+z-index:1!important;
+text-wrap:balance!important;
+}
+.note-helper,
+.faith-reference,
+.faith-inline-verse{
+position:relative!important;
+z-index:1!important;
+}
+@media (max-width:420px){
+.note-paper,
+.balanced-note-paper,
+.faith-note-paper{
+padding-left:56px!important;
+background:
+linear-gradient(90deg,rgba(0,0,0,.10) 0 1px,transparent 1px 100%) 43px 0/1px 100% no-repeat,
+repeating-linear-gradient(180deg,transparent 0 32px,rgba(0,0,0,.058) 33px,transparent 34px),
+linear-gradient(180deg,#fbfbf8 0%,#f1f0eb 58%,#e9e7df 100%)!important;
+}
+.note-paper::before,
+.balanced-note-paper::before,
+.faith-note-paper::before{
+width:40px!important;
+background:
+radial-gradient(circle at 20px 32px,rgba(0,0,0,.23) 0 3.5px,rgba(255,255,255,.58) 4px 7px,transparent 7.5px),
+radial-gradient(circle at 20px 82px,rgba(0,0,0,.21) 0 3.5px,rgba(255,255,255,.56) 4px 7px,transparent 7.5px),
+radial-gradient(circle at 20px 132px,rgba(0,0,0,.19) 0 3.5px,rgba(255,255,255,.54) 4px 7px,transparent 7.5px),
+linear-gradient(180deg,rgba(232,232,226,.98),rgba(210,210,204,.90))!important;
+}
+.note-paper::after,
+.balanced-note-paper::after,
+.faith-note-paper::after{
+left:56px!important;
+}
+}
