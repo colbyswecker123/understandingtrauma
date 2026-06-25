@@ -8,7 +8,6 @@ footerMount.innerHTML=`
 <div class="footer-main">
 <div class="footer-brand-block">
 <p class="footer-brand">Understanding Trauma</p>
-<p class="footer-note">Gentle reminders for hard moments.</p>
 <p class="footer-legal">© 2026 Understanding Trauma. All rights reserved.</p>
 <p class="footer-disclaimer">This site offers encouragement and general support. It is not a substitute for professional medical, mental health, legal, or emergency help.</p>
 </div>
