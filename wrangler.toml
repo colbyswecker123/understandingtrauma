@@ -4,4 +4,4 @@ compatibility_date = "2026-06-24"
 [[d1_databases]]
 binding = "DB"
 database_name = "understandingtrauma-db"
-database_id = "bafbc3ed-7fd3-4f53-aa10-d7fff1591e78"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"

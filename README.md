@@ -118,3 +118,8 @@ Paste your `ADMIN_TOKEN` to load pending messages.
 ## Notes
 
 This site is intentionally lightweight. It does not require WordPress, DreamHost, PHP, or a traditional server.
+
+
+## Message seed bank
+
+This version includes `seed_messages.sql` with more than 100 approved encouragement messages. After deploying the files, open Cloudflare D1 > understandingtrauma-db > Console, paste the contents of `seed_messages.sql`, and run it. It is safe to run more than once because each insert checks for existing message text first.
