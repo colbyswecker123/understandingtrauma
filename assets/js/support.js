@@ -4,6 +4,7 @@ note:"https://square.link/u/l9QhSqIH",
 peace:"https://square.link/u/H2LHHdmd"
 };
 
+(function(){
 function runSupportLinks(){
 const statusEl=document.getElementById("supportStatus");
 
@@ -24,7 +25,8 @@ if(url){
 button.href=url;
 button.target="_blank";
 button.rel="noopener";
-}else{
+}else if(button.dataset.utSupportBound!=="true"){
+button.dataset.utSupportBound="true";
 button.addEventListener("click",(event)=>{
 event.preventDefault();
 setStatus("This support option is almost ready. Once connected, this button will open a secure Square payment page.");
@@ -33,8 +35,13 @@ setStatus("This support option is almost ready. Once connected, this button will
 });
 }
 
+window.runSupportLinks=runSupportLinks;
+
 if(document.readyState==="loading"){
 document.addEventListener("DOMContentLoaded",runSupportLinks);
 }else{
 runSupportLinks();
 }
+
+document.addEventListener("ut:pagechange",runSupportLinks);
+})();

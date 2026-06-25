@@ -163,16 +163,23 @@ const fallbackMessages=[
 "You are allowed to lay down what is too heavy.",
 "You are allowed to exist without performing strength."
 ];
-const noteEl=document.getElementById("noteMessage");
-const newNoteButton=document.getElementById("newNoteButton");
+
+(function(){
 let lastMessage="";
+
 function localNote(){
 let msg=fallbackMessages[Math.floor(Math.random()*fallbackMessages.length)];
-if(fallbackMessages.length>1){while(msg===lastMessage){msg=fallbackMessages[Math.floor(Math.random()*fallbackMessages.length)];}}
+if(fallbackMessages.length>1){
+while(msg===lastMessage){
+msg=fallbackMessages[Math.floor(Math.random()*fallbackMessages.length)];
+}
+}
 lastMessage=msg;
 return msg;
 }
+
 async function loadNote(){
+const noteEl=document.getElementById("noteMessage");
 if(!noteEl)return;
 noteEl.classList.add("is-changing");
 try{
@@ -187,5 +194,28 @@ noteEl.textContent=localNote();
 window.setTimeout(()=>noteEl.classList.remove("is-changing"),180);
 }
 }
-if(newNoteButton){newNoteButton.addEventListener("click",loadNote);}
+
+function runHomeNote(){
+const noteEl=document.getElementById("noteMessage");
+const newNoteButton=document.getElementById("newNoteButton");
+if(!noteEl)return;
+if(newNoteButton&&newNoteButton.dataset.utHomeBound!=="true"){
+newNoteButton.dataset.utHomeBound="true";
+newNoteButton.addEventListener("click",loadNote);
+}
+if(noteEl.dataset.utLoaded!=="true"){
+noteEl.dataset.utLoaded="true";
 loadNote();
+}
+}
+
+window.runHomeNote=runHomeNote;
+
+if(document.readyState==="loading"){
+document.addEventListener("DOMContentLoaded",runHomeNote);
+}else{
+runHomeNote();
+}
+
+document.addEventListener("ut:pagechange",runHomeNote);
+})();

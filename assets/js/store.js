@@ -1,10 +1,14 @@
-const grid=document.getElementById("storeGrid");
+(function(){
 function money(cents){
 const amount=Number(cents||0)/100;
 return amount>0?amount.toLocaleString(undefined,{style:"currency",currency:"USD"}):"Price coming soon";
 }
-function escapeHtml(value){return String(value||"").replace(/[&<>'"]/g,(char)=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[char]));}
-function renderProducts(products){
+
+function escapeHtml(value){
+return String(value||"").replace(/[&<>'"]/g,(char)=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[char]||char));
+}
+
+function renderProducts(grid,products){
 if(!grid)return;
 grid.innerHTML="";
 if(!products.length){
@@ -20,15 +24,28 @@ card.innerHTML=`${image}<div class="store-card-body"><h2>${escapeHtml(product.na
 grid.appendChild(card);
 });
 }
+
 async function loadProducts(){
-if(!grid)return;
+const grid=document.getElementById("storeGrid");
+if(!grid||grid.dataset.utLoaded==="true")return;
+grid.dataset.utLoaded="true";
 try{
 const res=await fetch("/api/products",{headers:{"Accept":"application/json"}});
 const data=await res.json().catch(()=>({}));
 if(!res.ok)throw new Error(data.error||"Could not load products");
-renderProducts(data.products||[]);
+renderProducts(grid,data.products||[]);
 }catch(error){
 grid.innerHTML=`<article class="content-card store-empty"><h2>Store coming soon.</h2><p>Products could not be loaded right now. Please check back later.</p></article>`;
 }
 }
+
+window.runStoreProducts=loadProducts;
+
+if(document.readyState==="loading"){
+document.addEventListener("DOMContentLoaded",loadProducts);
+}else{
 loadProducts();
+}
+
+document.addEventListener("ut:pagechange",loadProducts);
+})();

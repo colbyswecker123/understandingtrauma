@@ -1,10 +1,15 @@
+(function(){
+function runSubmitForm(){
 const form=document.getElementById("messageForm");
 const statusEl=document.getElementById("formStatus");
+if(!form||!statusEl||form.dataset.utSubmitBound==="true")return;
+form.dataset.utSubmitBound="true";
+
 function setStatus(message,type="info"){
 statusEl.textContent=message;
 statusEl.dataset.type=type;
 }
-if(form){
+
 form.addEventListener("submit",async(event)=>{
 event.preventDefault();
 const formData=new FormData(form);
@@ -27,3 +32,14 @@ setStatus("The message could not be submitted yet. Please try again later.","err
 }
 });
 }
+
+window.runSubmitForm=runSubmitForm;
+
+if(document.readyState==="loading"){
+document.addEventListener("DOMContentLoaded",runSubmitForm);
+}else{
+runSubmitForm();
+}
+
+document.addEventListener("ut:pagechange",runSubmitForm);
+})();

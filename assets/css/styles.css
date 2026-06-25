@@ -985,3 +985,60 @@ width:100%!important;
 max-width:320px!important;
 }
 }
+
+/* v19 faith random page + smoother full-width polish */
+.faith-body .app-shell,
+.faith-body.balanced-home-body{
+background:
+radial-gradient(circle at 50% 0%,rgba(236,236,236,.96),rgba(159,159,159,.94) 44%,rgba(111,111,111,.96) 100%)!important;
+}
+.faith-main-home{
+min-height:calc(100svh - 220px)!important;
+}
+.faith-note-paper{
+position:relative!important;
+}
+.faith-note-paper::before{
+content:"";
+position:absolute;
+inset:12px;
+border:1px solid rgba(0,0,0,.08);
+border-radius:22px;
+pointer-events:none;
+}
+.faith-message{
+font-size:clamp(1.72rem,7vw,3.35rem)!important;
+line-height:.98!important;
+}
+.faith-reference{
+margin:8px 0 0!important;
+font-size:.86rem!important;
+font-weight:900!important;
+letter-spacing:.08em!important;
+text-transform:uppercase!important;
+color:rgba(0,0,0,.64)!important;
+}
+.faith-action-panel .control-button span:last-child{
+white-space:normal!important;
+}
+.site-menu a.is-active{
+background:rgba(0,0,0,.90)!important;
+color:#fff!important;
+}
+.footer-music-button{
+user-select:none!important;
+-webkit-tap-highlight-color:transparent!important;
+}
+.footer-music-button[aria-pressed="true"] .footer-music-label::after{
+content:" • looping";
+font-weight:800;
+opacity:.72;
+}
+@media (max-width:420px){
+.faith-message{
+font-size:clamp(1.46rem,8vw,2.58rem)!important;
+}
+.faith-reference{
+font-size:.74rem!important;
+}
+}
