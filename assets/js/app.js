@@ -163,9 +163,9 @@ const fallbackMessages=[
 "You are allowed to lay down what is too heavy.",
 "You are allowed to exist without performing strength."
 ];
-
 (function(){
 let lastMessage="";
+let writingTimer=null;
 
 function localNote(){
 let msg=fallbackMessages[Math.floor(Math.random()*fallbackMessages.length)];
@@ -178,21 +178,42 @@ lastMessage=msg;
 return msg;
 }
 
-async function loadNote(){
-const noteEl=document.getElementById("noteMessage");
-if(!noteEl)return;
-noteEl.classList.add("is-changing");
+function typeText(el,text,speed=34){
+clearInterval(writingTimer);
+el.textContent="";
+el.classList.remove("is-waiting");
+el.classList.add("is-writing");
+let index=0;
+writingTimer=setInterval(()=>{
+el.textContent+=text.charAt(index);
+index++;
+if(index>=text.length){
+clearInterval(writingTimer);
+writingTimer=null;
+el.classList.remove("is-writing");
+}
+},speed);
+}
+
+async function getNote(){
 try{
 const res=await fetch("/api/random-message",{headers:{"Accept":"application/json"}});
 if(!res.ok)throw new Error("No API message available");
 const data=await res.json();
-noteEl.textContent=data.message||localNote();
-lastMessage=noteEl.textContent;
+return data.message||localNote();
 }catch(error){
-noteEl.textContent=localNote();
-}finally{
-window.setTimeout(()=>noteEl.classList.remove("is-changing"),180);
+return localNote();
 }
+}
+
+async function loadNote(){
+const noteEl=document.getElementById("noteMessage");
+if(!noteEl)return;
+noteEl.textContent="Writing your note...";
+noteEl.classList.add("is-waiting");
+const message=await getNote();
+lastMessage=message;
+typeText(noteEl,message,34);
 }
 
 function runHomeNote(){
