@@ -1428,9 +1428,9 @@ const fallbackFaithMessages=[
 "verse_reference": "Hebrews 4:16 KJV"
 }
 ];
-
 (function(){
 let lastFaithMessage="";
+let writingTimer=null;
 
 function localFaithMessage(){
 let item=fallbackFaithMessages[Math.floor(Math.random()*fallbackFaithMessages.length)];
@@ -1443,26 +1443,36 @@ lastFaithMessage=item.message;
 return item;
 }
 
-function renderFaithMessage(item){
-const picked=item&&item.message?item:localFaithMessage();
-const messageEl=document.getElementById("faithMessage");
+function typeText(el,text,speed=34){
+clearInterval(writingTimer);
+el.textContent="";
+el.classList.remove("is-waiting");
+el.classList.add("is-writing");
+let index=0;
+writingTimer=setInterval(()=>{
+el.textContent+=text.charAt(index);
+index++;
+if(index>=text.length){
+clearInterval(writingTimer);
+writingTimer=null;
+el.classList.remove("is-writing");
+}
+},speed);
+}
+
+function renderFaithMeta(item){
 const referenceEl=document.getElementById("faithReference");
 const verseTextEl=document.getElementById("faithVerseText");
 const verseReferenceEl=document.getElementById("faithVerseReference");
 
-if(!messageEl)return;
-
-messageEl.textContent=picked.message;
-lastFaithMessage=picked.message;
-
 if(referenceEl){
-if(picked.reference){
-referenceEl.textContent=picked.reference;
+if(item.reference){
+referenceEl.textContent=item.reference;
 referenceEl.hidden=false;
-}else if(picked.kind==="prayer"){
+}else if(item.kind==="prayer"){
 referenceEl.textContent="Prayer";
 referenceEl.hidden=false;
-}else if(picked.kind==="saying"){
+}else if(item.kind==="saying"){
 referenceEl.textContent="Faith saying";
 referenceEl.hidden=false;
 }else{
@@ -1472,27 +1482,34 @@ referenceEl.hidden=false;
 }
 
 if(verseTextEl){
-verseTextEl.textContent=picked.verse_text||picked.message||"";
+verseTextEl.textContent=item.verse_text||"";
 }
+
 if(verseReferenceEl){
-verseReferenceEl.textContent=picked.verse_reference||picked.reference||"";
+verseReferenceEl.textContent=item.verse_reference||"";
+}
+}
+
+async function getFaithMessage(){
+try{
+const res=await fetch("/api/random-faith-message",{headers:{"Accept":"application/json"}});
+if(!res.ok)throw new Error("No API faith message available");
+const data=await res.json();
+return data.message?data:localFaithMessage();
+}catch(error){
+return localFaithMessage();
 }
 }
 
 async function loadFaithMessage(){
 const messageEl=document.getElementById("faithMessage");
 if(!messageEl)return;
-messageEl.classList.add("is-changing");
-try{
-const res=await fetch("/api/random-faith-message",{headers:{"Accept":"application/json"}});
-if(!res.ok)throw new Error("No API faith message available");
-const data=await res.json();
-renderFaithMessage(data.message?data:localFaithMessage());
-}catch(error){
-renderFaithMessage(localFaithMessage());
-}finally{
-window.setTimeout(()=>messageEl.classList.remove("is-changing"),180);
-}
+messageEl.textContent="Writing your faith note...";
+messageEl.classList.add("is-waiting");
+const item=await getFaithMessage();
+lastFaithMessage=item.message;
+renderFaithMeta(item);
+typeText(messageEl,item.message,34);
 }
 
 function runFaithMessages(){
