@@ -7,11 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css?v=6">
+<link rel="stylesheet" href="/assets/css/styles.css?v=7">
 <title>Admin Portal | Understanding Trauma</title>
+<meta name="description" content="Private admin portal for Understanding Trauma.">
 <meta name="robots" content="noindex,nofollow">
 </head>
-<body class="admin-body">
+<body class="interior-body">
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="app-shell">
 <header class="site-topbar">
 <a class="top-logo" href="/" aria-label="Understanding Trauma home">
@@ -28,13 +30,18 @@
 </div>
 <a href="/">Notes</a>
 <a href="/user_messages/">Submit</a>
-<a href="/about/">About</a>
 <a href="/resources/">Resources</a>
+<a href="/destress/">Destress</a>
+<a href="/faith/">Faith</a>
+<a href="/store/">Store</a>
+<a href="/support/">Support</a>
+<a href="/about/">About</a>
 <a href="/admin/" class="is-active">Admin</a>
 </div>
 </nav>
 </header>
-<main class="interior-main">
+<main class="interior-main content-main" id="main">
+
 <section class="admin-panel login-panel reveal" id="loginPanel">
 <p class="micro-label">Private admin area</p>
 <h1>Admin login</h1>
@@ -59,11 +66,13 @@
 <p class="hero-lede hero-lede-admin">Choose what you want to manage.</p>
 <div class="portal-grid">
 <a class="portal-card" href="/admin/messages/"><span class="portal-card-icon" aria-hidden="true">✉</span><span class="portal-card-text"><strong>Pending messages</strong><small>Review, approve, or reject submitted notes.</small></span><span class="portal-card-arrow" aria-hidden="true">→</span></a>
-<a class="portal-card" href="/"><span class="portal-card-icon" aria-hidden="true">⌂</span><span class="portal-card-text"><strong>View public site</strong><small>Open the live homepage.</small></span><span class="portal-card-arrow" aria-hidden="true">→</span></a>
+<a class="portal-card" href="/admin/products/"><span class="portal-card-icon" aria-hidden="true">□</span><span class="portal-card-text"><strong>Store products</strong><small>Add, edit, hide, or remove merchandise.</small></span><span class="portal-card-arrow" aria-hidden="true">→</span></a>
+<a class="portal-card" href="/store/"><span class="portal-card-icon" aria-hidden="true">⌂</span><span class="portal-card-text"><strong>View store</strong><small>Open the public merchandise page.</small></span><span class="portal-card-arrow" aria-hidden="true">→</span></a>
 <a class="portal-card" href="/user_messages/"><span class="portal-card-icon" aria-hidden="true">＋</span><span class="portal-card-text"><strong>Test submit form</strong><small>Submit a test message through the public form.</small></span><span class="portal-card-arrow" aria-hidden="true">→</span></a>
 </div>
 <div class="admin-status" id="portalStatus" role="status" aria-live="polite"></div>
 </section>
+
 </main>
 <footer class="site-footer clean-footer">
 <div class="footer-main">
@@ -80,13 +89,16 @@
 <div class="footer-links">
 <a href="/">Notes</a>
 <a href="/user_messages/">Submit</a>
-<a href="/about/">About</a>
 <a href="/resources/">Resources</a>
+<a href="/destress/">Destress</a>
+<a href="/faith/">Faith</a>
+<a href="/store/">Store</a>
+<a href="/support/">Support</a>
 <a href="/admin/">Admin</a>
 </div>
 </footer>
 </div>
-<script src="/assets/js/nav.js?v=6" defer></script>
-<script src="/assets/js/admin.js?v=6" defer></script>
+<script src="/assets/js/nav.js?v=7" defer></script>
+<script src="/assets/js/admin.js?v=7" defer></script>
 </body>
 </html>

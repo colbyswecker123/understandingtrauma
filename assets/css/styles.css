@@ -164,3 +164,55 @@ textarea:focus,input:focus{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255
 @media (prefers-reduced-motion:reduce){
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}
 }
+
+/* v7 expansion: support, destress, faith, store, product admin */
+.two-col{grid-template-columns:1fr}
+.resource-actions{margin:0 auto;width:min(100%,520px)}
+.support-card .control-button{margin-top:14px}
+.fine-print{margin:10px 0 0!important;font-size:.82rem;color:#2c2c2c}
+.destress-card{border:2px solid #000;border-radius:20px;background:linear-gradient(180deg,rgba(238,238,238,.94),rgba(212,212,212,.94));box-shadow:var(--shadow2);padding:20px;text-align:center;display:grid;gap:16px}
+.breathing-orb{width:150px;height:150px;border:2px solid #000;border-radius:999px;margin:0 auto;background:radial-gradient(circle,#f6f6f6,#bdbdbd);box-shadow:0 12px 24px rgba(0,0,0,.18),inset 0 0 18px rgba(255,255,255,.5);display:grid;place-items:center;transition:transform 4s ease,box-shadow 4s ease}
+.breathing-orb span{width:20px;height:20px;border-radius:999px;background:#050505}
+.breathing-orb.inhale{transform:scale(1.18)}
+.breathing-orb.hold{transform:scale(1.18);box-shadow:0 14px 30px rgba(0,0,0,.22),inset 0 0 24px rgba(255,255,255,.7)}
+.breathing-orb.exhale{transform:scale(.88);transition-duration:6s}
+.breathing-orb.rest{transform:scale(1);transition-duration:2s}
+.breathing-text{font-size:1.15rem;font-weight:850;margin:0}
+.destress-actions{display:grid;gap:10px}
+.faith-card p{font-family:var(--font-note);font-size:1.25rem;font-weight:700}
+.store-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:4px}
+.store-grid{display:grid;gap:14px}
+.store-empty{text-align:center}
+.store-card{border:2px solid #000;border-radius:20px;background:linear-gradient(180deg,rgba(238,238,238,.94),rgba(212,212,212,.94));box-shadow:var(--shadow2);overflow:hidden}
+.store-card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:2px solid #000}
+.store-placeholder{aspect-ratio:4/3;display:grid;place-items:center;border-bottom:2px solid #000;background:linear-gradient(135deg,#bdbdbd,#eeeeee)}
+.store-placeholder span{font-size:2rem;font-weight:900;letter-spacing:-.08em}
+.store-card-body{padding:16px;display:grid;gap:10px}
+.store-card-body h2{margin:0;font-size:1.25rem}
+.store-card-body p{margin:0;font-weight:650}
+.store-card-body strong{font-size:1.1rem}
+.store-card .control-button[disabled]{opacity:.72;cursor:not-allowed}
+.product-form{display:grid;gap:10px;margin:18px 0;padding:16px;border:2px solid #000;border-radius:18px;background:rgba(255,255,255,.20)}
+.product-form label{font-weight:850}
+.product-form textarea{min-height:110px}
+.product-form select{width:100%;border:2px solid #000;border-radius:13px;background:#f4f4f4;padding:12px;font:inherit;font-weight:700}
+.product-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.product-actions{display:grid;gap:10px}
+.product-admin-list{display:grid;gap:12px;margin-top:14px}
+.admin-product-card{display:grid;gap:12px;border:2px solid #000;border-radius:16px;background:linear-gradient(180deg,#f1f1f1,#d5d5d5);box-shadow:var(--shadow2);padding:14px}
+.admin-product-card h2{margin:0 0 5px;font-size:1.15rem}
+.admin-product-card p{margin:0 0 8px;font-weight:650}
+.admin-product-card strong{display:inline-flex;margin-left:8px}
+.product-badge{display:inline-flex;align-items:center;min-height:26px;padding:3px 9px;border:2px solid #000;border-radius:999px;font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:#efefef}
+.admin-product-actions{display:flex;gap:8px;flex-wrap:wrap}
+.support-mini{background:linear-gradient(180deg,rgba(255,255,255,.26),rgba(0,0,0,.045))}
+@media (min-width:760px){
+.two-col{grid-template-columns:1fr 1fr}
+.destress-actions,.product-actions{grid-template-columns:1fr 1fr}
+.store-grid{grid-template-columns:repeat(2,1fr)}
+.admin-product-card{grid-template-columns:1fr auto;align-items:center}
+}
+@media (max-width:390px){
+.breathing-orb{width:130px;height:130px}
+.product-form-grid{grid-template-columns:1fr}
+}

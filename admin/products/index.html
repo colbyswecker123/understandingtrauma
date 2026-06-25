@@ -8,13 +8,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css?v=7">
-<title>Understanding Trauma | A Note For You</title>
-<meta name="description" content="A gentle, mobile-first space for encouragement, hope, and healing.">
-<meta property="og:title" content="Understanding Trauma | A Note For You">
-<meta property="og:description" content="A gentle place to pause, breathe, and receive a note of encouragement.">
-<meta property="og:type" content="website">
+<title>Store Products | Understanding Trauma</title>
+<meta name="description" content="Protected admin product manager for Understanding Trauma store.">
+<meta name="robots" content="noindex,nofollow">
 </head>
-<body class="home-body">
+<body class="interior-body">
 <a class="skip-link" href="#main">Skip to main content</a>
 <div class="app-shell">
 <header class="site-topbar">
@@ -30,7 +28,7 @@
 <span>Understanding Trauma</span>
 <button class="menu-close" id="menuClose" type="button" aria-label="Close navigation menu">×</button>
 </div>
-<a href="/" class="is-active">Notes</a>
+<a href="/">Notes</a>
 <a href="/user_messages/">Submit</a>
 <a href="/resources/">Resources</a>
 <a href="/destress/">Destress</a>
@@ -38,49 +36,55 @@
 <a href="/store/">Store</a>
 <a href="/support/">Support</a>
 <a href="/about/">About</a>
-<a href="/admin/">Admin</a>
+<a href="/admin/" class="is-active">Admin</a>
 </div>
 </nav>
 </header>
-<main class="main-home" id="main">
+<main class="interior-main content-main" id="main">
 
-<section class="note-section reveal" aria-label="A note for you">
-<div class="section-label"><span></span><p>A Note For You</p><span></span></div>
-<div class="note-wrap">
-<article class="note-paper" aria-live="polite">
-<p class="note-kicker">Just in case nobody told you today:</p>
-<p class="note-message" id="noteMessage">You are not alone in what you’re feeling.</p>
-<p class="note-helper">Tap below for another message.</p>
-</article>
+<section class="admin-panel product-panel reveal" id="productPanel">
+<div class="admin-panel-top">
+<div><p class="micro-label">Store manager</p><h1>Products</h1></div>
+<button class="small-logout" id="logoutButton" type="button">Log out</button>
 </div>
-<div class="action-panel">
-<button class="control-button primary-control" id="newNoteButton" type="button">
-<span class="control-icon" aria-hidden="true">↻</span>
-<span>Show Another Message</span>
-</button>
-<a class="control-button secondary-control" href="/user_messages/">
-<span class="control-icon" aria-hidden="true">＋</span>
-<span>Submit a Custom Message</span>
-</a>
-<p class="review-note">Messages are reviewed before they appear publicly.</p>
+<p class="hero-lede hero-lede-admin">Add products now and connect checkout links later. Use the checkout URL field for Square checkout links when you are ready.</p>
+<div class="review-toolbar">
+<a class="mini-link" href="/admin/">← Back to portal</a>
+<a class="mini-link" href="/store/">View store</a>
 </div>
-</section>
-<section class="home-cards reveal reveal-delay" aria-label="Explore Understanding Trauma">
-<a class="mini-card" href="/resources/"><span>Support tools</span><strong>Other ways to get help</strong></a>
-<a class="mini-card" href="/destress/"><span>Destress</span><strong>Take a guided reset</strong></a>
-<a class="mini-card" href="/faith/"><span>Faith</span><strong>Faith-based encouragement</strong></a>
-<a class="mini-card" href="/store/"><span>Store</span><strong>Merchandise coming soon</strong></a>
-<a class="mini-card support-mini buy-coffee-link" href="https://www.buymeacoffee.com/understandingtrauma" target="_blank" rel="noopener">
-<span>Support</span><strong>Buy Me a Coffee</strong>
-</a>
-<div class="mini-card music-card" data-audio-card>
-<span>Calm mode</span>
-<button class="music-toggle" id="musicButton" type="button" aria-pressed="false">
-<i class="music-dot" aria-hidden="true"></i>
-<b class="music-label">Press for Relaxing Music</b>
-</button>
-<audio id="siteAudio" preload="none" loop src="/assets/audio/relaxing-music.mp3"></audio>
+<form class="product-form" id="productForm">
+<input type="hidden" id="productId" name="id">
+<label for="productName">Product name</label>
+<input id="productName" name="name" type="text" maxlength="120" placeholder="Understanding Trauma Shirt" required>
+<label for="productDescription">Description</label>
+<textarea id="productDescription" name="description" rows="4" maxlength="500" placeholder="Short product description."></textarea>
+<div class="product-form-grid">
+<div>
+<label for="productPrice">Price</label>
+<input id="productPrice" name="price" type="number" min="0" step="0.01" placeholder="24.99">
 </div>
+<div>
+<label for="productSort">Sort order</label>
+<input id="productSort" name="sort_order" type="number" step="1" placeholder="10">
+</div>
+</div>
+<label for="productImage">Image URL</label>
+<input id="productImage" name="image_url" type="url" placeholder="/assets/store/example.jpg or https://...">
+<label for="productCheckout">Checkout URL</label>
+<input id="productCheckout" name="checkout_url" type="url" placeholder="Square checkout link later">
+<label for="productStatus">Status</label>
+<select id="productStatus" name="status">
+<option value="draft">Draft / hidden</option>
+<option value="active">Active / public</option>
+</select>
+<div class="product-actions">
+<button class="control-button primary-control" type="submit"><span class="control-icon" aria-hidden="true">✓</span><span>Save Product</span></button>
+<button class="control-button secondary-control" id="clearProductForm" type="button"><span class="control-icon" aria-hidden="true">×</span><span>Clear</span></button>
+</div>
+<p class="admin-status" id="productStatusText" role="status" aria-live="polite"></p>
+</form>
+<div class="admin-status" id="productsLoadStatus" role="status" aria-live="polite"></div>
+<div class="product-admin-list" id="productAdminList"></div>
 </section>
 
 </main>
@@ -109,6 +113,6 @@
 </footer>
 </div>
 <script src="/assets/js/nav.js?v=7" defer></script>
-<script src="/assets/js/app.js?v=7" defer></script>
+<script src="/assets/js/admin-products.js?v=7" defer></script>
 </body>
 </html>

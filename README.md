@@ -148,3 +148,8 @@ This version adds a left-logo/right-hamburger header, footer social links on all
 ## Professional clean pass
 
 This version reduces the heavy visual styling, tightens mobile spacing, adds a more professional top navigation/header, keeps footer socials, and uses cleaner card/button sizing across home, submit, about, resources, and admin pages.
+
+
+## Store and expansion package
+
+This version adds Support, Destress, Faith, Store, and Admin Product Manager pages. Run `store_products_schema.sql` in Cloudflare D1 Console before using `/admin/products/`. See `STORE_SETUP.md`.
