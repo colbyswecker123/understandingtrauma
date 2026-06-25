@@ -178,3 +178,27 @@ This version removes the extra homepage cards and uses a true fixed glass header
 ## Balanced home sticky header
 
 This version fixes the header so it starts at the top and sticks while scrolling, while adding a small support card to the homepage. See `BALANCED_HOME_STICKY_HEADER.md`.
+
+
+## Coffee emoji support update
+
+This version changes the support wording to `Buy me a coffee. ☕` and cache-busts assets to v13.
+
+
+## Connected Square coffee link
+
+The $3 coffee support button is connected to:
+
+https://square.link/u/n12Mckni
+
+
+## Connected Square $5 link
+
+The $5 support button is connected to:
+
+https://square.link/u/l9QhSqIH
+
+
+## Full Width + Footer Music Update
+
+See `FULL_WIDTH_FOOTER_MUSIC_UPDATE.md`. Asset cache version: v18.

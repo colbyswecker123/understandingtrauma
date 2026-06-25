@@ -165,8 +165,6 @@ const fallbackMessages=[
 ];
 const noteEl=document.getElementById("noteMessage");
 const newNoteButton=document.getElementById("newNoteButton");
-const musicButton=document.getElementById("musicButton");
-const audio=document.getElementById("siteAudio");
 let lastMessage="";
 function localNote(){
 let msg=fallbackMessages[Math.floor(Math.random()*fallbackMessages.length)];
@@ -190,21 +188,4 @@ window.setTimeout(()=>noteEl.classList.remove("is-changing"),180);
 }
 }
 if(newNoteButton){newNoteButton.addEventListener("click",loadNote);}
-if(musicButton&&audio){
-musicButton.addEventListener("click",async()=>{
-try{
-if(audio.paused){
-await audio.play();
-musicButton.setAttribute("aria-pressed","true");
-musicButton.querySelector(".music-label").textContent="Music is playing";
-}else{
-audio.pause();
-musicButton.setAttribute("aria-pressed","false");
-musicButton.querySelector(".music-label").textContent="Press for Relaxing Music";
-}
-}catch(error){
-musicButton.querySelector(".music-label").textContent="Add relaxing-music.mp3 to enable music";
-}
-});
-}
 loadNote();

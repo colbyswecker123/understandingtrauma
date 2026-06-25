@@ -37,3 +37,17 @@ If a link is blank, the button will not leave the page. It will show a friendly 
 ## Why this setup
 
 This keeps the support page friendly and separate from the store checkout. The site explains the support option softly, and Square handles the secure payment page.
+
+
+## Connected Square coffee link
+
+The $3 coffee support button is connected to:
+
+https://square.link/u/n12Mckni
+
+
+## Connected Square $5 link
+
+The $5 support button is connected to:
+
+https://square.link/u/l9QhSqIH

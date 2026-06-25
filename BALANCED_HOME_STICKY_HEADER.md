@@ -11,7 +11,7 @@ Header:
 Homepage:
 - Keeps the note as the focus
 - Keeps Show Another Message and Submit a Custom Message
-- Adds one small support card: "Buy a quiet minute."
+- Adds one small support card: "Buy me a coffee. ☕"
 - Adds two small text links: Resources and Destress
 - Store, Faith, Admin, and other pages remain in the hamburger menu
 

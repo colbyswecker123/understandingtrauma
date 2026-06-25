@@ -11,13 +11,11 @@ function setStatus(message){
 if(statusEl)statusEl.textContent=message;
 }
 
-// Remove the custom / any amount card completely.
 document.querySelectorAll('[data-square-link="custom"]').forEach((button)=>{
 const card=button.closest(".support-option");
 if(card)card.remove();
 });
 
-// Connect the remaining Square buttons.
 document.querySelectorAll("[data-square-link]").forEach((button)=>{
 const key=button.dataset.squareLink;
 const url=SUPPORT_LINKS[key]||"";
