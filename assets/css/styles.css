@@ -216,3 +216,27 @@ textarea:focus,input:focus{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255
 .breathing-orb{width:130px;height:130px}
 .product-form-grid{grid-template-columns:1fr}
 }
+
+/* v8 friendly Square support page */
+.support-main{gap:16px}
+.support-hero{text-align:center;max-width:690px;margin:0 auto 4px}
+.support-hero h1{font-family:var(--font-note);font-size:clamp(2.45rem,11vw,4.2rem);letter-spacing:-.06em;line-height:.92;margin-bottom:12px}
+.support-note-card{width:min(100%,520px);margin:0 auto;padding:18px 20px;border:2px solid #000;border-radius:22px;background:linear-gradient(145deg,var(--paper,#f7f7f2),var(--paper2,#e9e8e1));box-shadow:var(--shadow2,0 8px 18px rgba(0,0,0,.13));text-align:center}
+.support-script{font-family:var(--font-note);font-size:1.28rem;font-weight:700;line-height:1.25;margin:0}
+.support-options{display:grid;gap:12px;width:min(100%,560px);margin:0 auto}
+.support-option{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;padding:16px;border:2px solid #000;border-radius:22px;background:linear-gradient(180deg,rgba(238,238,238,.94),rgba(212,212,212,.94));box-shadow:var(--shadow2,0 8px 18px rgba(0,0,0,.13))}
+.support-option h2{margin:3px 0 6px;font-size:1.25rem;letter-spacing:-.03em;font-weight:900}
+.support-option p{margin:0;font-size:.93rem;font-weight:650;line-height:1.33}
+.support-eyebrow{margin:0!important;text-transform:uppercase;letter-spacing:.16em;font-size:.68rem!important;font-weight:900!important;color:#262626}
+.featured-support{background:linear-gradient(180deg,#f4f4f4,#cccccc)}
+.support-button{display:grid;place-items:center;width:82px;height:82px;border:2px solid #000;border-radius:20px;background:linear-gradient(180deg,#fbfbfb,#d8d8d8);box-shadow:0 1px 0 rgba(255,255,255,.85) inset,0 4px 0 rgba(0,0,0,.17);text-align:center}
+.support-button span{font-size:1.18rem;font-weight:900;line-height:1}
+.support-button strong{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+.support-status{min-height:1.4rem;width:min(100%,520px);margin:0 auto;text-align:center;font-weight:850}
+.support-impact{margin-top:2px}
+@media (max-width:390px){
+.support-option{grid-template-columns:1fr;justify-items:start}
+.support-button{width:100%;height:54px;grid-template-columns:auto auto;gap:9px;border-radius:16px}
+.support-button span{font-size:1rem}
+.support-hero h1{font-size:2.6rem}
+}

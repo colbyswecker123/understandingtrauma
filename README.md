@@ -153,3 +153,8 @@ This version reduces the heavy visual styling, tightens mobile spacing, adds a m
 ## Store and expansion package
 
 This version adds Support, Destress, Faith, Store, and Admin Product Manager pages. Run `store_products_schema.sql` in Cloudflare D1 Console before using `/admin/products/`. See `STORE_SETUP.md`.
+
+
+## Friendly Square support page
+
+This version adds `/support/` as a branded alternative to Buy Me a Coffee: “Buy me a moment of calm.” Add Square payment links in `assets/js/support.js`. See `SQUARE_SUPPORT_SETUP.md`.
