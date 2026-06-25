@@ -173,3 +173,8 @@ This version adds a transparent sticky glass-style header and softer premium sty
 ## Minimal home fixed header
 
 This version removes the extra homepage cards and uses a true fixed glass header. See `MINIMAL_HOME_FIXED_HEADER.md`.
+
+
+## Balanced home sticky header
+
+This version fixes the header so it starts at the top and sticks while scrolling, while adding a small support card to the homepage. See `BALANCED_HOME_STICKY_HEADER.md`.
