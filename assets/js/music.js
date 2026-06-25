@@ -170,3 +170,89 @@ setupSoftNavigation();
 initPageFeatures();
 }
 })();
+/* v32 dynamic footer music button fix */
+(function(){
+if(window.utMusicDynamicFooterFixLoaded)return;
+window.utMusicDynamicFooterFixLoaded=true;
+
+function getMusicAudio(){
+let audio=window.utMusicAudio;
+if(audio)return audio;
+
+audio=document.getElementById("utSiteMusicAudio");
+
+if(!audio){
+audio=document.createElement("audio");
+audio.id="utSiteMusicAudio";
+audio.src="/assets/audio/relaxing-music.mp3";
+audio.preload="auto";
+audio.loop=true;
+audio.volume=.45;
+audio.style.display="none";
+document.body.appendChild(audio);
+}
+
+audio.loop=true;
+window.utMusicAudio=audio;
+return audio;
+}
+
+function updateMusicButtons(){
+const audio=getMusicAudio();
+const buttons=document.querySelectorAll("#musicToggle,.footer-music-button");
+
+buttons.forEach((button)=>{
+const isPlaying=!audio.paused;
+button.setAttribute("aria-pressed",isPlaying ? "true" : "false");
+
+const label=button.querySelector(".footer-music-label");
+if(label){
+label.textContent=isPlaying ? "Pause music" : "Play music";
+}
+});
+}
+
+async function toggleMusic(){
+const audio=getMusicAudio();
+
+try{
+if(audio.paused){
+await audio.play();
+}else{
+audio.pause();
+}
+}catch(error){
+const buttons=document.querySelectorAll("#musicToggle,.footer-music-button");
+buttons.forEach((button)=>{
+button.classList.add("music-error");
+const label=button.querySelector(".footer-music-label");
+if(label)label.textContent="Tap again";
+});
+}
+
+updateMusicButtons();
+}
+
+function bindMusicButtons(){
+getMusicAudio();
+
+const buttons=document.querySelectorAll("#musicToggle,.footer-music-button");
+
+buttons.forEach((button)=>{
+if(button.dataset.utMusicBound==="true")return;
+button.dataset.utMusicBound="true";
+button.addEventListener("click",toggleMusic);
+});
+
+updateMusicButtons();
+}
+
+if(document.readyState==="loading"){
+document.addEventListener("DOMContentLoaded",bindMusicButtons);
+}else{
+bindMusicButtons();
+}
+
+document.addEventListener("ut:footerready",bindMusicButtons);
+document.addEventListener("ut:pagechange",bindMusicButtons);
+})();
