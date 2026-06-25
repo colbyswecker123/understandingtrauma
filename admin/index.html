@@ -2,32 +2,35 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Message Review | Understanding Trauma</title>
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#8b8b8b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body class="admin-body">
-<div class="admin-shell">
-<header class="site-header interior-header" aria-label="Site header">
-<a class="brand" href="/" aria-label="Understanding Trauma home">
-<img class="brand-logo brand-logo-small" src="/assets/images/ut-logo-transparent.png" alt="Understanding Trauma logo">
+<div class="page-shell">
+<header class="interior-header">
+<a class="brand-mark small" href="/" aria-label="Understanding Trauma home">
+<img src="/assets/images/ut-logo-transparent.png" alt="Understanding Trauma logo">
 </a>
 <a class="top-link" href="/">View site</a>
 </header>
-<main>
+<main class="interior-main">
 <section class="admin-panel reveal">
-<p class="eyebrow">Private review area</p>
+<p class="micro-label">Private review area</p>
 <h1>Pending messages</h1>
 <p class="hero-lede hero-lede-admin">Enter the admin token stored in Cloudflare Pages to review, approve, or reject submitted messages.</p>
 <form class="token-form" id="tokenForm">
 <label for="token">Admin token</label>
 <input id="token" type="password" autocomplete="current-password" placeholder="Paste token">
-<button class="button button-primary" type="submit">Load pending messages</button>
+<button class="control-button primary-control" type="submit">
+<span class="control-icon" aria-hidden="true">→</span>
+<span>Load pending</span>
+</button>
 </form>
 <div class="admin-status" id="adminStatus" role="status" aria-live="polite"></div>
 <div class="message-list" id="messageList"></div>

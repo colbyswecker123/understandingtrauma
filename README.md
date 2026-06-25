@@ -123,3 +123,8 @@ This site is intentionally lightweight. It does not require WordPress, DreamHost
 ## Message seed bank
 
 This version includes `seed_messages.sql` with more than 100 approved encouragement messages. After deploying the files, open Cloudflare D1 > understandingtrauma-db > Console, paste the contents of `seed_messages.sql`, and run it. It is safe to run more than once because each insert checks for existing message text first.
+
+
+## Advanced full revamp
+
+This version keeps the gray/black/white identity, uses the cleaned transparent UT logo, adds a more polished mobile-first interface, and includes a `seed_messages.sql` file with 100+ approved messages. After deploying, run `seed_messages.sql` in Cloudflare D1 Console to populate the live database.
