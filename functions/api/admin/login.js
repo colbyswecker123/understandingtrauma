@@ -74,13 +74,17 @@ const token=header.replace(/^Bearer\s+/i,"").trim();
 return Boolean(env.ADMIN_TOKEN&&token&&token===env.ADMIN_TOKEN);
 }
 
-export async function onRequestGet({request,env}){
+export async function onRequestPost({request,env}){
 try{
-if(!(await authorized(request,env))){return json({error:"Unauthorized."},401);}
-if(!env.DB){return json({error:"Database is not configured yet."},503);}
-const result=await env.DB.prepare("SELECT id, message, display_name, status, created_at FROM messages WHERE status = 'pending' ORDER BY created_at ASC LIMIT 100").all();
-return json({messages:result.results||[]});
+const body=await request.json().catch(()=>({}));
+const username=String(body.username||"").trim();
+const password=String(body.password||"");
+const configuredPassword=expectedPassword(env);
+if(!configuredPassword){return json({error:"Admin login is not configured yet. Add ADMIN_USERNAME, ADMIN_PASSWORD, and ADMIN_SESSION_SECRET in Cloudflare Pages variables."},503);}
+if(username!==expectedUsername(env)||password!==configuredPassword){return json({error:"Incorrect username or password."},401);}
+const cookie=await makeSessionCookie(env,username);
+return json({ok:true,username},200,{"Set-Cookie":cookie});
 }catch(error){
-return json({error:"Unable to load messages."},500);
+return json({error:"Unable to sign in right now."},500);
 }
 }

@@ -128,3 +128,8 @@ This version includes `seed_messages.sql` with more than 100 approved encouragem
 ## Advanced full revamp
 
 This version keeps the gray/black/white identity, uses the cleaned transparent UT logo, adds a more polished mobile-first interface, and includes a `seed_messages.sql` file with 100+ approved messages. After deploying, run `seed_messages.sql` in Cloudflare D1 Console to populate the live database.
+
+
+## Admin login upgrade
+
+This version includes a standard admin username/password login that works with iPhone/Safari Passwords. Add `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and `ADMIN_SESSION_SECRET` in Cloudflare Pages variables. See `SECURITY_NOTES.md` for details.

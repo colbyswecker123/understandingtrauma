@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Message Review | Understanding Trauma</title>
+<title>Admin Login | Understanding Trauma</title>
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#8b8b8b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,18 +20,31 @@
 <a class="top-link" href="/">View site</a>
 </header>
 <main class="interior-main">
-<section class="admin-panel reveal">
-<p class="micro-label">Private review area</p>
-<h1>Pending messages</h1>
-<p class="hero-lede hero-lede-admin">Enter the admin token stored in Cloudflare Pages to review, approve, or reject submitted messages.</p>
-<form class="token-form" id="tokenForm">
-<label for="token">Admin token</label>
-<input id="token" type="password" autocomplete="current-password" placeholder="Paste token">
+<section class="admin-panel login-panel reveal" id="loginPanel">
+<p class="micro-label">Private admin area</p>
+<h1>Admin login</h1>
+<p class="hero-lede hero-lede-admin">Sign in to review submitted messages. This login uses a standard username and password form, so Safari/iPhone Passwords can save it.</p>
+<form class="login-form" id="loginForm" autocomplete="on" method="post">
+<label for="username">Username</label>
+<input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="admin" required>
+<label for="password">Password</label>
+<input id="password" name="password" type="password" autocomplete="current-password" placeholder="Password" required>
 <button class="control-button primary-control" type="submit">
 <span class="control-icon" aria-hidden="true">→</span>
-<span>Load pending</span>
+<span>Sign in</span>
 </button>
 </form>
+<div class="admin-status" id="loginStatus" role="status" aria-live="polite"></div>
+</section>
+<section class="admin-panel review-panel reveal is-hidden" id="reviewPanel">
+<div class="admin-panel-top">
+<div>
+<p class="micro-label">Private review area</p>
+<h1>Pending messages</h1>
+</div>
+<button class="small-logout" id="logoutButton" type="button">Log out</button>
+</div>
+<p class="hero-lede hero-lede-admin">Review, approve, or reject submitted messages before they appear on the home page.</p>
 <div class="admin-status" id="adminStatus" role="status" aria-live="polite"></div>
 <div class="message-list" id="messageList"></div>
 </section>

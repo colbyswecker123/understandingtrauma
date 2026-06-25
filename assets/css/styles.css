@@ -156,3 +156,11 @@ textarea:focus,input:focus{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255
 @media (prefers-reduced-motion:reduce){
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}
 }
+
+.is-hidden{display:none!important}
+.login-form{display:grid;gap:10px;margin-top:18px}
+.login-form label{font-weight:900;margin-bottom:-4px}
+.admin-panel-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.small-logout{min-height:36px;padding:7px 12px;border:2px solid #000;border-radius:10px;background:linear-gradient(180deg,#eeeeee,#d6d6d6);font-weight:900;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.16)}
+.small-logout:hover{background:#fff}
+.login-panel .control-button{margin-top:4px}

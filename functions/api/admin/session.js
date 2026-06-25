@@ -76,11 +76,9 @@ return Boolean(env.ADMIN_TOKEN&&token&&token===env.ADMIN_TOKEN);
 
 export async function onRequestGet({request,env}){
 try{
-if(!(await authorized(request,env))){return json({error:"Unauthorized."},401);}
-if(!env.DB){return json({error:"Database is not configured yet."},503);}
-const result=await env.DB.prepare("SELECT id, message, display_name, status, created_at FROM messages WHERE status = 'pending' ORDER BY created_at ASC LIMIT 100").all();
-return json({messages:result.results||[]});
+if(await validSession(request,env)){return json({ok:true,username:expectedUsername(env)});}
+return json({ok:false},401);
 }catch(error){
-return json({error:"Unable to load messages."},500);
+return json({ok:false},401);
 }
 }
