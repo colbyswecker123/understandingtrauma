@@ -1,7 +1,9 @@
 (function(){
-let timer=null;
-let stopTimer=null;
+let breathingTimer=null;
+let countdownTimer=null;
+let endTimer=null;
 let step=0;
+let secondsLeft=60;
 const totalDuration=60000;
 const steps=[
 {label:"Inhale slowly.",className:"inhale",duration:4000},
@@ -10,47 +12,103 @@ const steps=[
 {label:"Rest for a moment.",className:"rest",duration:2000}
 ];
 
-function stop(message="You completed the 60-second reset. Take one more easy breath."){
-clearTimeout(timer);
-clearTimeout(stopTimer);
-timer=null;
-stopTimer=null;
+function getEls(){
+return{
+text:document.getElementById("breathingText"),
+orb:document.getElementById("breathingOrb"),
+startButton:document.getElementById("startBreathing"),
+stopButton:document.getElementById("stopBreathing")
+};
+}
+
+function formatTime(seconds){
+const mins=Math.floor(seconds/60);
+const secs=seconds%60;
+return `${mins}:${String(secs).padStart(2,"0")}`;
+}
+
+function updateStartButton(){
+const {startButton}=getEls();
+if(!startButton)return;
+startButton.textContent=`Reset in progress — ${formatTime(secondsLeft)}`;
+}
+
+function resetButton(){
+const {startButton}=getEls();
+if(!startButton)return;
+startButton.textContent="Start 60-Second Reset";
+startButton.disabled=false;
+}
+
+function stop(message="Press start when you are ready."){
+clearTimeout(breathingTimer);
+clearInterval(countdownTimer);
+clearTimeout(endTimer);
+breathingTimer=null;
+countdownTimer=null;
+endTimer=null;
 step=0;
-const text=document.getElementById("breathingText");
-const orb=document.getElementById("breathingOrb");
-const startButton=document.getElementById("startBreathing");
+secondsLeft=60;
+const {text,orb}=getEls();
 if(text)text.textContent=message;
 if(orb)orb.className="breathing-orb";
-if(startButton)startButton.textContent="Start 60-Second Reset";
+resetButton();
+}
+
+function complete(){
+clearTimeout(breathingTimer);
+clearInterval(countdownTimer);
+clearTimeout(endTimer);
+breathingTimer=null;
+countdownTimer=null;
+endTimer=null;
+step=0;
+secondsLeft=60;
+const {text,orb,startButton}=getEls();
+if(text)text.textContent="You completed the 60-second reset. Take one more easy breath.";
+if(orb)orb.className="breathing-orb";
+if(startButton){
+startButton.textContent="Complete";
+startButton.disabled=true;
+}
+setTimeout(()=>{
+resetButton();
+if(text)text.textContent="Press start when you are ready.";
+},1800);
 }
 
 function setStep(){
-const text=document.getElementById("breathingText");
-const orb=document.getElementById("breathingOrb");
+const {text,orb}=getEls();
 if(!text||!orb){
-stop("Press start when you are ready.");
+stop();
 return;
 }
 const current=steps[step%steps.length];
 text.textContent=current.label;
 orb.className=`breathing-orb ${current.className}`;
 step++;
-timer=setTimeout(setStep,current.duration);
+breathingTimer=setTimeout(setStep,current.duration);
 }
 
 function start(){
-if(timer||stopTimer)return;
-const startButton=document.getElementById("startBreathing");
-if(startButton)startButton.textContent="Reset in progress...";
+if(breathingTimer||countdownTimer||endTimer)return;
+const {startButton}=getEls();
+secondsLeft=60;
+if(startButton)startButton.disabled=false;
+updateStartButton();
 setStep();
-stopTimer=setTimeout(()=>{
-stop();
+countdownTimer=setInterval(()=>{
+secondsLeft--;
+if(secondsLeft<0)secondsLeft=0;
+updateStartButton();
+},1000);
+endTimer=setTimeout(()=>{
+complete();
 },totalDuration);
 }
 
 function runDestress(){
-const startButton=document.getElementById("startBreathing");
-const stopButton=document.getElementById("stopBreathing");
+const {startButton,stopButton}=getEls();
 if(startButton&&startButton.dataset.utBreathBound!=="true"){
 startButton.dataset.utBreathBound="true";
 startButton.textContent="Start 60-Second Reset";
