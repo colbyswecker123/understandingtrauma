@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Submit a Custom Message | Understanding Trauma</title>
+<meta name="description" content="Submit a gentle message of hope for Understanding Trauma.">
+<meta name="theme-color" content="#6d8375">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="site-shell">
+<header class="site-header" aria-label="Site header">
+<a class="brand" href="/" aria-label="Understanding Trauma home">
+<span class="brand-mark" aria-hidden="true">UT</span>
+<span class="brand-text"><strong>Understanding</strong><span>Trauma</span></span>
+</a>
+<nav class="main-nav" aria-label="Main navigation">
+<a href="/">A Note For You</a>
+<a href="/user_messages/" aria-current="page">Submit a Message</a>
+<a href="/#social">Social</a>
+</nav>
+</header>
+<main id="main">
+<section class="form-hero section-pad narrow">
+<p class="eyebrow">Send hope forward</p>
+<h1>Submit a custom message.</h1>
+<p class="hero-lede">Write something gentle, steady, and encouraging for someone who may really need it today.</p>
+</section>
+<section class="form-section narrow reveal">
+<form class="message-form" id="messageForm">
+<label for="message">Your custom message</label>
+<p class="field-help">Start with the feeling of: “Just in case nobody told you today…”</p>
+<textarea id="message" name="message" rows="8" maxlength="280" required placeholder="You are not alone in what you’re feeling."></textarea>
+<div class="form-row">
+<label class="small-field" for="displayName">Name or initials <span>optional</span></label>
+<input id="displayName" name="displayName" type="text" maxlength="40" placeholder="Anonymous">
+</div>
+<label class="check-row">
+<input type="checkbox" name="review" required>
+<span>I understand this message will be reviewed before it appears publicly.</span>
+</label>
+<button class="button button-primary full" type="submit">Submit Message</button>
+<p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+</form>
+<aside class="submit-tips" aria-label="Message tips">
+<h2>Helpful message style</h2>
+<ul>
+<li>Keep it short, gentle, and kind.</li>
+<li>Avoid graphic details or triggering language.</li>
+<li>Write like you are speaking to one person.</li>
+<li>Offer hope without minimizing pain.</li>
+</ul>
+</aside>
+</section>
+</main>
+<footer class="site-footer">
+<div>
+<p class="footer-brand">Understanding Trauma</p>
+<p class="footer-note">All custom messages are reviewed before they are published to the home page.</p>
+</div>
+<a class="text-link" href="/">Back to notes</a>
+</footer>
+</div>
+<script src="/assets/js/submit.js" defer></script>
+</body>
+</html>
