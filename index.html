@@ -7,17 +7,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css?v=7">
+<link rel="stylesheet" href="/assets/css/styles.css?v=11">
 <title>Understanding Trauma | A Note For You</title>
-<meta name="description" content="A gentle, mobile-first space for encouragement, hope, and healing.">
+<meta name="description" content="A gentle place to pause, breathe, and receive a note of encouragement.">
 <meta property="og:title" content="Understanding Trauma | A Note For You">
 <meta property="og:description" content="A gentle place to pause, breathe, and receive a note of encouragement.">
 <meta property="og:type" content="website">
 </head>
-<body class="home-body">
+<body class="home-body minimal-home-body">
 <a class="skip-link" href="#main">Skip to main content</a>
-<div class="app-shell">
-<header class="site-topbar">
+<div class="app-shell minimal-app-shell">
+<header class="site-topbar fixed-glass-header">
 <a class="top-logo" href="/" aria-label="Understanding Trauma home">
 <img src="/assets/images/ut-logo-transparent.png" alt="Understanding Trauma logo">
 </a>
@@ -31,7 +31,7 @@
 <button class="menu-close" id="menuClose" type="button" aria-label="Close navigation menu">×</button>
 </div>
 <a href="/" class="is-active">Notes</a>
-<a href="/user_messages/">Submit</a>
+<a href="/user_messages/">Submit a Message</a>
 <a href="/resources/">Resources</a>
 <a href="/destress/">Destress</a>
 <a href="/faith/">Faith</a>
@@ -42,18 +42,17 @@
 </div>
 </nav>
 </header>
-<main class="main-home" id="main">
-
-<section class="note-section reveal" aria-label="A note for you">
+<main class="main-home minimal-main-home" id="main">
+<section class="note-section minimal-note-section reveal" aria-label="A note for you">
 <div class="section-label"><span></span><p>A Note For You</p><span></span></div>
 <div class="note-wrap">
-<article class="note-paper" aria-live="polite">
+<article class="note-paper minimal-note-paper" aria-live="polite">
 <p class="note-kicker">Just in case nobody told you today:</p>
 <p class="note-message" id="noteMessage">You are not alone in what you’re feeling.</p>
 <p class="note-helper">Tap below for another message.</p>
 </article>
 </div>
-<div class="action-panel">
+<div class="action-panel minimal-action-panel">
 <button class="control-button primary-control" id="newNoteButton" type="button">
 <span class="control-icon" aria-hidden="true">↻</span>
 <span>Show Another Message</span>
@@ -64,31 +63,14 @@
 </a>
 <p class="review-note">Messages are reviewed before they appear publicly.</p>
 </div>
+<p class="minimal-menu-note">More support, faith encouragement, destressing tools, store, and support options are in the menu.</p>
 </section>
-<section class="home-cards reveal reveal-delay" aria-label="Explore Understanding Trauma">
-<a class="mini-card" href="/resources/"><span>Support tools</span><strong>Other ways to get help</strong></a>
-<a class="mini-card" href="/destress/"><span>Destress</span><strong>Take a guided reset</strong></a>
-<a class="mini-card" href="/faith/"><span>Faith</span><strong>Faith-based encouragement</strong></a>
-<a class="mini-card" href="/store/"><span>Store</span><strong>Merchandise coming soon</strong></a>
-<a class="mini-card support-mini buy-coffee-link" href="/support/" target="_blank" rel="noopener">
-<span>Support</span><strong>Buy a Moment of Calm</strong>
-</a>
-<div class="mini-card music-card" data-audio-card>
-<span>Calm mode</span>
-<button class="music-toggle" id="musicButton" type="button" aria-pressed="false">
-<i class="music-dot" aria-hidden="true"></i>
-<b class="music-label">Press for Relaxing Music</b>
-</button>
-<audio id="siteAudio" preload="none" loop src="/assets/audio/relaxing-music.mp3"></audio>
-</div>
-</section>
-
 </main>
-<footer class="site-footer clean-footer">
+<footer class="site-footer clean-footer minimal-footer">
 <div class="footer-main">
 <div>
 <p class="footer-brand">Understanding Trauma</p>
-<p class="footer-note">Gentle reminders and submitted notes for hard days.</p>
+<p class="footer-note">Gentle reminders for hard days.</p>
 </div>
 <div class="footer-socials" aria-label="Social links">
 <a href="https://www.tiktok.com/@understandingtrauma?is_from_webapp=1&amp;sender_device=pc" rel="noopener" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.27V2h-3.12v13.58a2.8 2.8 0 1 1-2.8-2.8c.31 0 .61.05.89.14V9.75a5.94 5.94 0 0 0-.89-.07A5.92 5.92 0 1 0 15.82 15V8.13a7.9 7.9 0 0 0 4.65 1.52V6.69h-.88Z" fill="currentColor"/></svg></a>
@@ -97,18 +79,12 @@
 </div>
 </div>
 <div class="footer-links">
-<a href="/">Notes</a>
-<a href="/user_messages/">Submit</a>
 <a href="/resources/">Resources</a>
-<a href="/destress/">Destress</a>
-<a href="/faith/">Faith</a>
-<a href="/store/">Store</a>
 <a href="/support/">Support</a>
-<a href="/admin/">Admin</a>
 </div>
 </footer>
 </div>
-<script src="/assets/js/nav.js?v=7" defer></script>
-<script src="/assets/js/app.js?v=7" defer></script>
+<script src="/assets/js/nav.js?v=11" defer></script>
+<script src="/assets/js/app.js?v=11" defer></script>
 </body>
 </html>

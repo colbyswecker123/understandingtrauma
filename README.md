@@ -158,3 +158,18 @@ This version adds Support, Destress, Faith, Store, and Admin Product Manager pag
 ## Friendly Square support page
 
 This version adds `/support/` as a branded alternative to Buy Me a Coffee: “Buy me a moment of calm.” Add Square payment links in `assets/js/support.js`. See `SQUARE_SUPPORT_SETUP.md`.
+
+
+## Calmer homepage redesign
+
+This version simplifies the homepage and footer so the site feels less crowded and more peaceful. See `CALM_HOMEPAGE_NOTES.md`.
+
+
+## Sleek sticky header upgrade
+
+This version adds a transparent sticky glass-style header and softer premium styling. See `SLEEK_STYLE_UPGRADE.md`.
+
+
+## Minimal home fixed header
+
+This version removes the extra homepage cards and uses a true fixed glass header. See `MINIMAL_HOME_FIXED_HEADER.md`.
