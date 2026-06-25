@@ -1428,6 +1428,7 @@ const fallbackFaithMessages=[
 "verse_reference": "Hebrews 4:16 KJV"
 }
 ];
+
 (function(){
 let lastFaithMessage="";
 let writingTimer=null;
@@ -1443,18 +1444,28 @@ lastFaithMessage=item.message;
 return item;
 }
 
-function typeText(el,text,speed=34){
+function writeLikePencil(el,text,speed=28){
 clearInterval(writingTimer);
 el.textContent="";
-el.classList.remove("is-waiting");
 el.classList.add("is-writing");
+
+const textNode=document.createTextNode("");
+const pencil=document.createElement("span");
+pencil.className="pencil-cursor";
+pencil.setAttribute("aria-hidden","true");
+
+el.appendChild(textNode);
+el.appendChild(pencil);
+
 let index=0;
 writingTimer=setInterval(()=>{
-el.textContent+=text.charAt(index);
+textNode.nodeValue+=text.charAt(index);
 index++;
+
 if(index>=text.length){
 clearInterval(writingTimer);
 writingTimer=null;
+pencil.remove();
 el.classList.remove("is-writing");
 }
 },speed);
@@ -1504,22 +1515,23 @@ return localFaithMessage();
 async function loadFaithMessage(){
 const messageEl=document.getElementById("faithMessage");
 if(!messageEl)return;
-messageEl.textContent="Writing your faith note...";
-messageEl.classList.add("is-waiting");
+messageEl.textContent="";
 const item=await getFaithMessage();
 lastFaithMessage=item.message;
 renderFaithMeta(item);
-typeText(messageEl,item.message,34);
+writeLikePencil(messageEl,item.message,28);
 }
 
 function runFaithMessages(){
 const messageEl=document.getElementById("faithMessage");
 const button=document.getElementById("newFaithButton");
 if(!messageEl)return;
+
 if(button&&button.dataset.utFaithBound!=="true"){
 button.dataset.utFaithBound="true";
 button.addEventListener("click",loadFaithMessage);
 }
+
 if(messageEl.dataset.utLoaded!=="true"){
 messageEl.dataset.utLoaded="true";
 loadFaithMessage();
