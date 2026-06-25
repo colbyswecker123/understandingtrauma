@@ -39,3 +39,17 @@ The password is not stored in localStorage or sessionStorage.
 5. Approve/reject a test message
 6. Log out
 7. Reopen /admin/ and test saved password autofill
+
+
+## Admin portal page split
+
+This version separates the admin portal from message review:
+
+/admin/ = login and private dashboard
+/admin/messages/ = protected pending message review page
+
+The message review page checks the session first. If not signed in, it redirects back to:
+
+/admin/?return=/admin/messages/
+
+After login, the user is sent back to the protected message review page.

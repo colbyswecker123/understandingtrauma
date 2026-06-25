@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Admin Login | Understanding Trauma</title>
+<title>Admin Portal | Understanding Trauma</title>
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#8b8b8b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css?v=4">
 </head>
 <body class="admin-body">
 <div class="page-shell">
@@ -23,7 +23,7 @@
 <section class="admin-panel login-panel reveal" id="loginPanel">
 <p class="micro-label">Private admin area</p>
 <h1>Admin login</h1>
-<p class="hero-lede hero-lede-admin">Sign in to review submitted messages. This login uses a standard username and password form, so Safari/iPhone Passwords can save it.</p>
+<p class="hero-lede hero-lede-admin">Sign in to access the private admin portal. This uses a standard username and password form, so iPhone/Safari Passwords can save it.</p>
 <form class="login-form" id="loginForm" autocomplete="on" method="post">
 <label for="username">Username</label>
 <input id="username" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="admin" required>
@@ -36,20 +36,45 @@
 </form>
 <div class="admin-status" id="loginStatus" role="status" aria-live="polite"></div>
 </section>
-<section class="admin-panel review-panel reveal is-hidden" id="reviewPanel">
+<section class="admin-panel portal-panel reveal is-hidden" id="portalPanel">
 <div class="admin-panel-top">
 <div>
-<p class="micro-label">Private review area</p>
-<h1>Pending messages</h1>
+<p class="micro-label">Admin portal</p>
+<h1>Dashboard</h1>
 </div>
 <button class="small-logout" id="logoutButton" type="button">Log out</button>
 </div>
-<p class="hero-lede hero-lede-admin">Review, approve, or reject submitted messages before they appear on the home page.</p>
-<div class="admin-status" id="adminStatus" role="status" aria-live="polite"></div>
-<div class="message-list" id="messageList"></div>
+<p class="hero-lede hero-lede-admin">Choose what you want to manage. Message review is on its own protected page now.</p>
+<div class="portal-grid">
+<a class="portal-card" href="/admin/messages/">
+<span class="portal-card-icon" aria-hidden="true">✉</span>
+<span class="portal-card-text">
+<strong>Pending messages</strong>
+<small>Review, approve, or reject submitted notes.</small>
+</span>
+<span class="portal-card-arrow" aria-hidden="true">→</span>
+</a>
+<a class="portal-card" href="/">
+<span class="portal-card-icon" aria-hidden="true">⌂</span>
+<span class="portal-card-text">
+<strong>View public site</strong>
+<small>Open the live homepage.</small>
+</span>
+<span class="portal-card-arrow" aria-hidden="true">→</span>
+</a>
+<a class="portal-card" href="/user_messages/">
+<span class="portal-card-icon" aria-hidden="true">＋</span>
+<span class="portal-card-text">
+<strong>Test submit form</strong>
+<small>Submit a test message through the public form.</small>
+</span>
+<span class="portal-card-arrow" aria-hidden="true">→</span>
+</a>
+</div>
+<div class="admin-status" id="portalStatus" role="status" aria-live="polite"></div>
 </section>
 </main>
 </div>
-<script src="/assets/js/admin.js" defer></script>
+<script src="/assets/js/admin.js?v=4" defer></script>
 </body>
 </html>

@@ -133,3 +133,8 @@ This version keeps the gray/black/white identity, uses the cleaned transparent U
 ## Admin login upgrade
 
 This version includes a standard admin username/password login that works with iPhone/Safari Passwords. Add `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and `ADMIN_SESSION_SECRET` in Cloudflare Pages variables. See `SECURITY_NOTES.md` for details.
+
+
+## Admin portal split
+
+The admin area now has `/admin/` as a private portal/dashboard and `/admin/messages/` as the protected pending-message review page.
