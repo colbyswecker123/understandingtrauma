@@ -207,3 +207,8 @@ See `FULL_WIDTH_FOOTER_MUSIC_UPDATE.md`. Asset cache version: v18.
 ## Faith Random Page + Smooth Music Update
 
 See `FAITH_RANDOM_MUSIC_UPDATE.md`. Run `faith_messages_schema.sql` in D1 to load the faith-message database.
+
+
+## Faith Related Verses + Fixed Header
+
+See `FAITH_RELATED_VERSES_FIXED_HEADER.md`. Asset version: v20.

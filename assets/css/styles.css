@@ -1042,3 +1042,108 @@ font-size:clamp(1.46rem,8vw,2.58rem)!important;
 font-size:.74rem!important;
 }
 }
+
+
+/* v20 fixed header + faith related scripture */
+:root{
+--ut-header-height:74px;
+}
+html,
+body{
+margin:0!important;
+padding:0!important;
+width:100%!important;
+min-height:100%!important;
+overflow-x:hidden!important;
+}
+body{
+padding-top:var(--ut-header-height)!important;
+}
+.site-topbar,
+.clean-sticky-header,
+.fixed-glass-header{
+position:fixed!important;
+top:0!important;
+left:0!important;
+right:0!important;
+width:100%!important;
+max-width:none!important;
+margin:0!important;
+transform:none!important;
+z-index:9999!important;
+border-radius:0!important;
+border-left:0!important;
+border-right:0!important;
+min-height:var(--ut-header-height)!important;
+}
+.app-shell,
+.balanced-app-shell,
+.minimal-app-shell,
+.calm-app-shell{
+padding-top:0!important;
+margin:0!important;
+max-width:none!important;
+width:100%!important;
+border-radius:0!important;
+overflow:visible!important;
+}
+.main-home,
+.interior-main{
+padding-top:24px!important;
+}
+.faith-scripture-box{
+width:min(100%,340px);
+margin:0 auto;
+padding:13px 14px;
+border:1.5px solid rgba(0,0,0,.52);
+border-radius:18px;
+background:linear-gradient(180deg,rgba(255,255,255,.56),rgba(220,220,220,.34));
+-webkit-backdrop-filter:blur(10px);
+backdrop-filter:blur(10px);
+box-shadow:0 1px 0 rgba(255,255,255,.35) inset,0 10px 24px rgba(0,0,0,.09);
+}
+.faith-scripture-label{
+margin:0 0 6px;
+font-size:.68rem;
+font-weight:950;
+letter-spacing:.15em;
+text-transform:uppercase;
+color:rgba(0,0,0,.62);
+}
+.faith-verse-text{
+margin:0;
+font-family:Kalam,cursive;
+font-size:1.05rem;
+font-weight:700;
+line-height:1.16;
+color:#111;
+}
+.faith-verse-reference{
+margin:7px 0 0;
+font-size:.74rem;
+font-weight:900;
+letter-spacing:.08em;
+text-transform:uppercase;
+color:rgba(0,0,0,.62);
+}
+@media (min-width:760px){
+.faith-scripture-box{
+width:min(100%,430px);
+}
+}
+@media (max-width:420px){
+:root{
+--ut-header-height:68px;
+}
+.main-home,
+.interior-main{
+padding-top:20px!important;
+}
+.faith-scripture-box{
+width:min(100%,340px);
+padding:12px 13px;
+}
+.faith-verse-text{
+font-size:.98rem;
+}
+}
