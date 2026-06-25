@@ -1275,3 +1275,23 @@ color:rgba(0,0,0,.72)!important;
 width:min(100%,280px)!important;
 margin-top:4px!important;
 }
+.note-message.is-waiting,
+.faith-message.is-waiting{
+opacity:.58!important;
+font-size:clamp(1.35rem,6vw,2.55rem)!important;
+}
+.note-message.is-writing::after,
+.faith-message.is-writing::after{
+content:"";
+display:inline-block;
+width:.08em;
+height:.85em;
+margin-left:.08em;
+background:rgba(0,0,0,.72);
+animation:utBlink .9s steps(1) infinite;
+transform:translateY(.08em);
+}
+@keyframes utBlink{
+0%,48%{opacity:1}
+49%,100%{opacity:0}
+}
