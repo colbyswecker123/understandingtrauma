@@ -1444,7 +1444,7 @@ lastFaithMessage=item.message;
 return item;
 }
 
-function writeLikePencil(el,text,speed=28){
+function writeLikePencil(el,text,speed=45){
 clearInterval(writingTimer);
 el.textContent="";
 el.classList.add("is-writing");
