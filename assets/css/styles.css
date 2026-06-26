@@ -1485,19 +1485,17 @@ content:""!important;
 display:none!important;
 }
 
-/* v37 store page fix - consolidated, no setup change */
+/* v38 store page fix - stable empty state */
 .store-coming-soon-mark{
 display:none!important;
 }
-.store-grid{
-box-sizing:border-box!important;
-}
-.store-grid:has(.store-coming-soon-page),
-.store-grid:has(.store-coming-soon-card-clean){
+#storeGrid.is-empty-store,
+.store-grid.is-empty-store{
 width:100%!important;
 max-width:620px!important;
 margin-left:auto!important;
 margin-right:auto!important;
+justify-self:center!important;
 display:grid!important;
 grid-template-columns:1fr!important;
 justify-items:center!important;
@@ -1507,7 +1505,7 @@ padding-left:0!important;
 padding-right:0!important;
 box-sizing:border-box!important;
 }
-.store-coming-soon-page{
+.store-grid.is-empty-store .store-coming-soon-page{
 grid-column:1 / -1!important;
 justify-self:center!important;
 width:100%!important;
@@ -1519,7 +1517,7 @@ place-items:center!important;
 padding:18px 0 28px!important;
 box-sizing:border-box!important;
 }
-.store-coming-soon-card-clean{
+.store-grid.is-empty-store .store-coming-soon-card-clean{
 justify-self:center!important;
 width:100%!important;
 max-width:560px!important;
@@ -1535,10 +1533,10 @@ backdrop-filter:blur(12px)!important;
 box-shadow:0 1px 0 rgba(255,255,255,.50) inset,0 18px 42px rgba(0,0,0,.12)!important;
 text-align:center!important;
 }
-.store-coming-soon-card-clean *{
+.store-grid.is-empty-store .store-coming-soon-card-clean *{
 box-sizing:border-box!important;
 }
-.store-eyebrow{
+.store-grid.is-empty-store .store-eyebrow{
 margin:0 auto 10px!important;
 display:inline-flex!important;
 align-items:center!important;
@@ -1554,7 +1552,7 @@ letter-spacing:.15em!important;
 text-transform:uppercase!important;
 color:rgba(0,0,0,.68)!important;
 }
-.store-coming-soon-card-clean h2{
+.store-grid.is-empty-store .store-coming-soon-card-clean h2{
 margin:0 auto 10px!important;
 font-size:clamp(2.1rem,9vw,4.1rem)!important;
 line-height:.92!important;
@@ -1562,7 +1560,7 @@ letter-spacing:-.075em!important;
 font-weight:950!important;
 text-wrap:balance!important;
 }
-.store-coming-copy{
+.store-grid.is-empty-store .store-coming-copy{
 max-width:440px!important;
 margin:0 auto 18px!important;
 font-size:1rem!important;
@@ -1570,42 +1568,42 @@ font-weight:650!important;
 line-height:1.42!important;
 color:rgba(0,0,0,.72)!important;
 }
-.store-coming-actions{
+.store-grid.is-empty-store .store-coming-actions{
 width:min(100%,360px)!important;
 margin:0 auto!important;
 display:grid!important;
 gap:10px!important;
 }
-.store-coming-actions .control-button{
+.store-grid.is-empty-store .store-coming-actions .control-button{
 width:100%!important;
 }
 @media (min-width:700px){
-.store-coming-actions{
+.store-grid.is-empty-store .store-coming-actions{
 grid-template-columns:1fr 1fr!important;
 width:min(100%,460px)!important;
 }
 }
 @media (max-width:420px){
-.store-grid:has(.store-coming-soon-page),
-.store-grid:has(.store-coming-soon-card-clean){
+#storeGrid.is-empty-store,
+.store-grid.is-empty-store{
 max-width:100%!important;
 }
-.store-coming-soon-page{
+.store-grid.is-empty-store .store-coming-soon-page{
 max-width:100%!important;
 padding-top:10px!important;
 padding-bottom:24px!important;
 }
-.store-coming-soon-card-clean{
+.store-grid.is-empty-store .store-coming-soon-card-clean{
 width:100%!important;
 max-width:100%!important;
 padding:24px 15px 20px!important;
 border-radius:22px!important;
 }
-.store-coming-soon-card-clean h2{
+.store-grid.is-empty-store .store-coming-soon-card-clean h2{
 font-size:clamp(1.95rem,11vw,2.8rem)!important;
 letter-spacing:-.07em!important;
 }
-.store-coming-copy{
+.store-grid.is-empty-store .store-coming-copy{
 font-size:.94rem!important;
 }
 }
