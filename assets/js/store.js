@@ -1,18 +1,5 @@
 (function(){
-function money(cents){
-const amount=Number(cents||0)/100;
-return amount>0?amount.toLocaleString(undefined,{style:"currency",currency:"USD"}):"Price coming soon";
-}
-
-function escapeHtml(value){
-return String(value||"").replace(/[&<>'"]/g,(char)=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[char]||char));
-}
-
-function renderProducts(grid,products){
-if(!grid)return;
-grid.innerHTML="";
-if(!products.length){
-grid.innerHTML=`<section class="store-coming-soon-page">
+const COMING_SOON_HTML=`<section class="store-coming-soon-page">
 <div class="store-coming-soon-card-clean">
 <p class="store-eyebrow">Understanding Trauma Store</p>
 <h2>Store coming soon.</h2>
@@ -29,9 +16,32 @@ grid.innerHTML=`<section class="store-coming-soon-page">
 </div>
 </div>
 </section>`;
+function money(cents){
+const amount=Number(cents||0)/100;
+return amount>0?amount.toLocaleString(undefined,{style:"currency",currency:"USD"}):"Price coming soon";
+}
+function escapeHtml(value){
+return String(value||"").replace(/[&<>'"]/g,(char)=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;","\"":"&quot;"}[char]||char));
+}
+function showComingSoon(grid){
+if(!grid)return;
+grid.classList.add("is-empty-store");
+grid.classList.remove("has-products");
+if(grid.innerHTML.trim()!==COMING_SOON_HTML.trim()){
+grid.innerHTML=COMING_SOON_HTML;
+}
+}
+function renderProducts(grid,products){
+if(!grid)return;
+const safeProducts=Array.isArray(products)?products:[];
+if(!safeProducts.length){
+showComingSoon(grid);
 return;
 }
-products.forEach((product)=>{
+grid.classList.remove("is-empty-store");
+grid.classList.add("has-products");
+grid.innerHTML="";
+safeProducts.forEach((product)=>{
 const card=document.createElement("article");
 card.className="store-card";
 const image=product.image_url?`<img src="${escapeHtml(product.image_url)}" alt="${escapeHtml(product.name)}">`:`<div class="store-placeholder" aria-hidden="true"><span>UT</span></div>`;
@@ -40,28 +50,25 @@ card.innerHTML=`${image}<div class="store-card-body"><h2>${escapeHtml(product.na
 grid.appendChild(card);
 });
 }
-
 async function loadProducts(){
 const grid=document.getElementById("storeGrid");
 if(!grid||grid.dataset.utLoaded==="true")return;
 grid.dataset.utLoaded="true";
+showComingSoon(grid);
 try{
 const res=await fetch("/api/products",{headers:{"Accept":"application/json"}});
 const data=await res.json().catch(()=>({}));
 if(!res.ok)throw new Error(data.error||"Could not load products");
 renderProducts(grid,data.products||[]);
 }catch(error){
-grid.innerHTML=`<article class="content-card store-empty"><h2>Store coming soon.</h2><p>Products could not be loaded right now. Please check back later.</p></article>`;
+showComingSoon(grid);
 }
 }
-
 window.runStoreProducts=loadProducts;
-
 if(document.readyState==="loading"){
 document.addEventListener("DOMContentLoaded",loadProducts);
 }else{
 loadProducts();
 }
-
 document.addEventListener("ut:pagechange",loadProducts);
 })();
