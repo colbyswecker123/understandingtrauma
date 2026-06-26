@@ -1616,3 +1616,65 @@ font-size:clamp(1.8rem,11vw,2.65rem)!important;
 letter-spacing:-.07em!important;
 }
 }
+/* v36 store page true center fix */
+.store-grid{
+width:100%!important;
+max-width:620px!important;
+margin-left:auto!important;
+margin-right:auto!important;
+display:grid!important;
+justify-items:center!important;
+padding-left:0!important;
+padding-right:0!important;
+box-sizing:border-box!important;
+}
+
+.store-coming-soon-page{
+width:100%!important;
+max-width:560px!important;
+margin-left:auto!important;
+margin-right:auto!important;
+display:grid!important;
+place-items:center!important;
+padding-left:0!important;
+padding-right:0!important;
+box-sizing:border-box!important;
+}
+
+.store-coming-soon-card-clean{
+width:100%!important;
+max-width:560px!important;
+margin-left:auto!important;
+margin-right:auto!important;
+box-sizing:border-box!important;
+}
+
+.store-coming-soon-card-clean *{
+box-sizing:border-box!important;
+}
+
+@media (max-width:420px){
+.store-grid{
+max-width:100%!important;
+}
+
+.store-coming-soon-page{
+max-width:100%!important;
+}
+
+.store-coming-soon-card-clean{
+width:100%!important;
+max-width:100%!important;
+margin-left:auto!important;
+margin-right:auto!important;
+}
+
+.page-hero h1,
+.content-hero h1{
+font-size:clamp(2rem,10vw,2.85rem)!important;
+line-height:.96!important;
+letter-spacing:-.07em!important;
+max-width:100%!important;
+overflow-wrap:normal!important;
+}
+}
