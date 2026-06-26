@@ -1607,3 +1607,31 @@ letter-spacing:-.07em!important;
 font-size:.94rem!important;
 }
 }
+/* store empty state center fix */
+#storeGrid > .store-empty,
+#storeGrid > .store-coming-soon-page{
+grid-column:1 / -1!important;
+justify-self:center!important;
+width:min(100%,560px)!important;
+max-width:560px!important;
+margin-left:auto!important;
+margin-right:auto!important;
+box-sizing:border-box!important;
+}
+
+#storeGrid > .store-empty{
+text-align:center!important;
+}
+
+#storeGrid > .store-coming-soon-page{
+display:grid!important;
+place-items:center!important;
+}
+
+#storeGrid > .store-coming-soon-page > .store-coming-soon-card-clean{
+width:100%!important;
+max-width:560px!important;
+margin-left:auto!important;
+margin-right:auto!important;
+box-sizing:border-box!important;
+}
