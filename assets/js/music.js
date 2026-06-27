@@ -105,7 +105,9 @@ const path=url.pathname;
 if(path.startsWith("/admin"))return false;
 if(path.startsWith("/api"))return false;
 if(/\.(pdf|zip|png|jpg|jpeg|webp|gif|svg|mp3|mp4|mov|docx|xlsx|pptx)$/i.test(path))return false;
-
+if(url.pathname==="/store/" || url.pathname.startsWith("/store/")){return false;
+}
+  
 return true;
 }
 
